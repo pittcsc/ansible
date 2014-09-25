@@ -1,0 +1,6 @@
+---
+- name: Install Ansible
+  apt: pkg=ansible state=installed
+
+- name: Set Ansible options
+  action: template src=ansible.cfg dest=/etc/ansible/ansible.cfg

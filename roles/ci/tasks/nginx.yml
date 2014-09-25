@@ -1,0 +1,7 @@
+---
+- name: Install nginx
+  action: apt pkg=nginx state=latest
+
+- name: Configure Jenkins reverse proxy
+  action: template src=nginx/sites-enabled/ci.pittcsc.org dest=/etc/nginx/sites-enabled/ci.pittcsc.org
+  notify: Restart nginx

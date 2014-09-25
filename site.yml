@@ -1,0 +1,26 @@
+---
+# Common
+- hosts: all
+  roles:
+    - common
+
+# DNS
+- hosts: dns
+  roles:
+    - dns/common
+- hosts: dns-01
+  roles:
+    - dns/master
+- hosts: dns-02
+  roles:
+    - dns/slave
+
+# Config
+- hosts: config
+  roles:
+    - config
+
+# CI
+- hosts: ci
+  roles:
+    - ci

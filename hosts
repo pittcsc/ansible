@@ -1,0 +1,9 @@
+[dns]
+dns-01
+dns-02
+
+[config]
+config-02
+
+[ci]
+ci-01
