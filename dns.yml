@@ -9,4 +9,3 @@
 - hosts: dns-02
   roles:
     - dns/slave
-
