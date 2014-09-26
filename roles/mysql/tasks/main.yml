@@ -1,0 +1,6 @@
+---
+- name: Install MySQL
+  action: apt package=mysql-server state=latest
+
+- name: Install libmysqlclient
+  action: apt package=libmysqlclient-dev state=latest

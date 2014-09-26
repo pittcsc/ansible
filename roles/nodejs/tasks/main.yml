@@ -1,0 +1,6 @@
+---
+- name: Install Node.js
+  action: apt package=nodejs state=latest
+
+- name: Install NPM
+  action: apt package=npm state=latest
