@@ -1,0 +1,13 @@
+---
+- name: Install rbenv
+  action: git repo=https://github.com/sstephenson/rbenv.git version=master dest=/opt/rbenv
+
+- name: Set up rbenv directories
+  action: file path={{ item }} state=directory
+  with_items:
+    - shims
+    - versions
+    - plugins
+
+- name: Configure rbenv
+  action: template src=rbenv.sh dest=/etc/profile.d/rbenv.sh
