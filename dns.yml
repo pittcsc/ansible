@@ -1,0 +1,12 @@
+---
+- hosts: dns
+  roles:
+    - dns/common
+
+- hosts: dns-01
+  roles:
+    - dns/master
+- hosts: dns-02
+  roles:
+    - dns/slave
+

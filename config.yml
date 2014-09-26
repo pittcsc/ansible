@@ -1,0 +1,4 @@
+---
+- hosts: config
+  roles:
+    - config

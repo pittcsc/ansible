@@ -1,0 +1,6 @@
+---
+- hosts: ci
+  roles:
+    - mysql
+    - nodejs
+    - ci
