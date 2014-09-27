@@ -12,3 +12,7 @@
 
 - name: Install Jenkins
   action: apt pkg=jenkins state=latest
+
+- name: Set Jenkins defaults
+  action: template src=jenkins/defaults dest=/etc/default/jenkins
+  notify: Restart Jenkins
