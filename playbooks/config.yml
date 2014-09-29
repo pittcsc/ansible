@@ -1,4 +1,5 @@
 ---
 - hosts: config
   roles:
+    - common
     - config

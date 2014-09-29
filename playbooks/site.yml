@@ -1,9 +1,4 @@
 ---
-# Common
-- hosts: all
-  roles:
-    - common
-
 - include: dns.yml
 - include: config.yml
 - include: ci.yml

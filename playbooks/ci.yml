@@ -1,6 +1,7 @@
 ---
 - hosts: ci
   roles:
+    - common
     - mysql
     - ruby
     - nodejs
