@@ -10,4 +10,4 @@
     - plugins
 
 - name: Configure rbenv
-  action: template src=rbenv.sh dest=/etc/profile.d/rbenv.sh
+  action: copy src=rbenv.sh dest=/etc/profile.d/rbenv.sh

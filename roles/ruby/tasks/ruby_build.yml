@@ -3,4 +3,4 @@
   action: git repo=https://github.com/sstephenson/ruby-build.git version=master dest=/opt/rbenv/plugins/ruby_build
 
 - name: Configure ruby-build
-  action: template src=ruby_build.sh dest=/etc/profile.d/ruby_build.sh
+  action: copy src=ruby_build.sh dest=/etc/profile.d/ruby_build.sh

@@ -1,4 +1,4 @@
 ---
 - name: Set nameservers
-  action: template src=network/resolvconf/head dest=/etc/resolvconf/resolv.conf.d/head
+  action: copy src=network/resolvconf/head dest=/etc/resolvconf/resolv.conf.d/head
   notify: Update resolv.conf

@@ -6,7 +6,7 @@
     - bind9-doc
 
 - name: Set bind9 options
-  action: template src=bind9 dest=/etc/default/bind9
+  action: copy src=bind9 dest=/etc/default/bind9
   notify: Restart bind9
 
 - name: Set named options

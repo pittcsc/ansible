@@ -1,4 +1,4 @@
 ---
 - name: Define named zones
-  action: template src=named.conf.local dest=/etc/bind/named.conf.local
+  action: copy src=named.conf.local dest=/etc/bind/named.conf.local
   notify: Restart bind9

@@ -7,9 +7,9 @@
   action: file path=/etc/bind/zones state=directory
 
 - name: Populate forward zone file for do-nyc3.pittcsc.org
-  action: template src=zones/db.do-nyc3.pittcsc.org dest=/etc/bind/zones/db.do-nyc3.pittcsc.org mode=0644
+  action: copy src=zones/db.do-nyc3.pittcsc.org dest=/etc/bind/zones/db.do-nyc3.pittcsc.org mode=0644
   notify: Restart bind9
 
 - name: Populate reverse zone file for 132.10.in-addr.arpa
-  action: template src=zones/db.10.132 dest=/etc/bind/zones/db.10.132 mode=0644
+  action: copy src=zones/db.10.132 dest=/etc/bind/zones/db.10.132 mode=0644
   notify: Restart bind9
