@@ -3,6 +3,7 @@ acl "trusted" {
   10.132.248.122; # dns-02
   10.132.236.208; # config-02
   10.132.243.53;  # ci-01
+  10.132.251.252  # knowhow-01
 };
 
 options {
@@ -21,12 +22,12 @@ options {
   allow-transfer {
     none;
   };
-  
+
   forwarders {
     8.8.8.8;
     4.4.4.4;
   };
 
   dnssec-validation auto;
-  auth-nxdomain no; 
+  auth-nxdomain no;
 };
