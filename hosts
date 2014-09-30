@@ -2,6 +2,9 @@
 dns-01
 dns-02
 
+[gateways]
+gateway-01
+
 [config]
 config-02
 

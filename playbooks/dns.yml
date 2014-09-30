@@ -2,11 +2,9 @@
 - hosts: dns-01
   roles:
     - common
-    - dns/common
     - dns/master
 
 - hosts: dns-02
   roles:
     - common
-    - dns/common
     - dns/slave

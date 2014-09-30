@@ -1,5 +1,6 @@
 ---
 - include: dns.yml
+- include: gateways.yml
 - include: config.yml
 - include: ci.yml
 - include: knowhow.yml
