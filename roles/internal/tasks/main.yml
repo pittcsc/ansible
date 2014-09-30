@@ -10,8 +10,8 @@
   action: ufw interface=eth0 direction=out rule=allow
   notify: Reload ufw
 
-- name: Allow inbound TCP traffic from internal hosts
-  action: ufw direction=in proto=tcp from_ip={{ item }} rule=allow
+- name: Allow inbound traffic from internal hosts
+  action: ufw direction=in proto=any from_ip={{ item }} rule=allow
   with_items:
     - 10.132.250.45   # dns-01
     - 10.132.248.122  # dns-02
@@ -21,6 +21,6 @@
     - 10.132.251.252  # knowhow-01
   notify: Reload ufw
 
-- name: Drop inbound TCP traffic from unknown hosts
+- name: Drop inbound traffic from unknown hosts
   action: ufw direction=in rule=deny
   notify: Reload ufw
