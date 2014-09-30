@@ -9,7 +9,7 @@
   action: apt_repository repo=ppa:ansible/ansible state=present update_cache=true
 
 - name: Install Ansible
-  action: apt pkg=ansible state=installed
+  action: apt pkg=ansible state=latest
 
 - name: Set Ansible options
   action: copy src=ansible.cfg dest=/etc/ansible/ansible.cfg
