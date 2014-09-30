@@ -1,6 +1,6 @@
 ---
 - name: Install Ansible dependencies
-  action: apt pkg={{ item } state=latest
+  action: apt pkg={{ item }} state=latest
   with_items:
     - software-properties-common
     - python-pycurl
