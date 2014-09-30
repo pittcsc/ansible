@@ -2,5 +2,6 @@
 - hosts: knowhow
   roles:
     - common
+    - internal
     - nodejs
     - mongodb

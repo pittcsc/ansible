@@ -1,0 +1,23 @@
+---
+- name: Allow local loopback traffic
+  action: ufw interface=lo rule=allow
+  notify: Reload ufw
+
+- name: Allow outbound public traffic
+  action: ufw interface=eth0 direction=out rule=allow
+  notify: Reload ufw
+
+- name: Allow inbound TCP traffic from internal hosts
+  action: ufw direction=in proto=tcp from_ip={{ item }} rule=allow
+  with_items:
+    - 10.132.250.45   # dns-01
+    - 10.132.248.122  # dns-02
+    - 10.132.223.240  # gateway-01
+    - 10.132.236.208  # config-02
+    - 10.132.243.53   # ci-01
+    - 10.132.251.252  # knowhow-01
+  notify: Reload ufw
+
+- name: Drop inbound TCP traffic from unknown hosts
+  action: ufw direction=in policy=deny
+  notify: Reload ufw

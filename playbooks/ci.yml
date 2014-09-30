@@ -2,6 +2,7 @@
 - hosts: ci
   roles:
     - common
+    - internal
     - mysql
     - ruby
     - nodejs

@@ -2,4 +2,5 @@
 - hosts: config
   roles:
     - common
+    - internal
     - config
