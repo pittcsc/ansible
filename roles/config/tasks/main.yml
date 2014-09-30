@@ -1,6 +1,12 @@
 ---
+- name: Install Ansible dependencies
+  action: apt pkg=software-properties-common state=latest
+
+- name: Add Ansible APT repository
+  action: apt_repository repo=ppa:ansible/ansible state=present update_cache=true
+
 - name: Install Ansible
-  apt: pkg=ansible state=installed
+  action: apt pkg=ansible state=installed
 
 - name: Set Ansible options
   action: copy src=ansible.cfg dest=/etc/ansible/ansible.cfg
