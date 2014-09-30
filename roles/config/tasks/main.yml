@@ -1,6 +1,9 @@
 ---
 - name: Install Ansible dependencies
-  action: apt pkg=software-properties-common state=latest
+  action: apt pkg={{ item } state=latest
+  with_items:
+    - software-properties-common
+    - python-pycurl
 
 - name: Add Ansible APT repository
   action: apt_repository repo=ppa:ansible/ansible state=present update_cache=true
