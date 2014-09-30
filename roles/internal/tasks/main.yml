@@ -1,7 +1,4 @@
 ---
-- name: Enable ufw
-  action: ufw state=enabled rule=deny
-
 - name: Allow local loopback traffic
   action: ufw interface=lo policy=allow
   notify: Reload ufw
@@ -24,3 +21,6 @@
     - 10.132.243.53   # ci-01
     - 10.132.251.252  # knowhow-01
   notify: Reload ufw
+
+- name: Enable ufw
+  action: ufw state=enabled rule=deny
