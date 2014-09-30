@@ -1,8 +1,4 @@
 ---
-- name: Allow local loopback traffic
-  action: ufw interface=lo rule=allow
-  notify: Reload ufw
-
 - name: Allow outbound public traffic
   action: ufw interface=eth0 direction=out rule=allow
   notify: Reload ufw
