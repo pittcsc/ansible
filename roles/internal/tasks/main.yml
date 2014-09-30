@@ -1,9 +1,9 @@
 ---
 - name: Enable ufw
   action: ufw state=enabled
-  
+
 - name: Allow local loopback traffic
-  action: ufw interface=lo rule=allow
+  action: ufw interface=lo policy=allow
   notify: Reload ufw
 
 - name: Allow outbound public traffic
