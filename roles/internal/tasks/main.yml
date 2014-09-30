@@ -1,6 +1,6 @@
 ---
 - name: Enable ufw
-  action: ufw state=enabled
+  action: ufw state=enabled rule=deny
 
 - name: Allow local loopback traffic
   action: ufw interface=lo policy=allow
@@ -8,6 +8,10 @@
 
 - name: Allow outbound public traffic
   action: ufw interface=eth0 direction=out rule=allow
+  notify: Reload ufw
+
+- name: Allow outbound private traffic
+  action: ufw interface=eth1 direction=out rule=allow
   notify: Reload ufw
 
 - name: Allow inbound traffic from internal hosts
@@ -19,8 +23,4 @@
     - 10.132.236.208  # config-02
     - 10.132.243.53   # ci-01
     - 10.132.251.252  # knowhow-01
-  notify: Reload ufw
-
-- name: Drop inbound traffic from unknown hosts
-  action: ufw direction=in rule=deny
   notify: Reload ufw
