@@ -22,5 +22,5 @@
   notify: Reload ufw
 
 - name: Drop inbound TCP traffic from unknown hosts
-  action: ufw direction=in policy=deny
+  action: ufw direction=in rule=deny
   notify: Reload ufw
