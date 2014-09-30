@@ -1,10 +1,13 @@
 ---
+- name: Enable ufw
+  action: ufw state=enabled
+
 - name: Allow outbound public traffic
-  action: ufw interface=eth0 direction=out rule=allow
+  action: ufw direction=out policy=allow
   notify: Reload ufw
 
-- name: Allow outbound private traffic
-  action: ufw interface=eth1 direction=out rule=allow
+- name: Deny other inbound traffic
+  action: ufw direction=in policy=deny
   notify: Reload ufw
 
 - name: Allow inbound traffic from internal hosts
@@ -17,6 +20,3 @@
     - 10.132.224.20   # ci-01
     - 10.132.251.252  # knowhow-01
   notify: Reload ufw
-
-- name: Enable ufw
-  action: ufw state=enabled policy=deny
