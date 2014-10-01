@@ -3,7 +3,7 @@
   action: ufw state=enabled
 
 - name: Allow outbound public traffic
-  action: ufw direction=out policy=allow
+  action: ufw direction=out rule=allow
   notify: Reload ufw
 
 - name: Allow inbound traffic from internal hosts
