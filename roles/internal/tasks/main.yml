@@ -1,6 +1,7 @@
 ---
 - name: Allow outbound public traffic
   action: ufw direction=outgoing policy=allow
+  notify: Reload ufw
 
 - name: Allow inbound traffic from internal hosts
   action: ufw direction=in proto=any from_ip={{ item }} rule=allow
@@ -11,6 +12,8 @@
     - 10.132.236.208  # config-02
     - 10.132.243.53   # ci-01
     - 10.132.251.252  # knowhow-01
+  notify: Reload ufw
 
 - name: Deny other inbound traffic
   action: ufw direction=incoming policy=deny
+  notify: Reload ufw
