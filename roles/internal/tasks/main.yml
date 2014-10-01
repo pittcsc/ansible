@@ -1,4 +1,7 @@
 ---
+- name: Enable ufw
+  action: ufw state=enabled
+  
 - name: Allow outbound public traffic
   action: ufw direction=outgoing policy=allow
   notify: Reload ufw
