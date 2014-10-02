@@ -4,3 +4,4 @@
 
 - name: Delete default site
   action: file path=/etc/nginx/sites-enabled/default state=absent
+  notify: Restart nginx
