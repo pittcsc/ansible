@@ -14,5 +14,5 @@
   action: apt pkg=jenkins state=latest
 
 - name: Set Jenkins defaults
-  action: copy src=jenkins/defaults dest=/etc/default/jenkins
+  action: copy src=defaults dest=/etc/default/jenkins
   notify: Restart Jenkins

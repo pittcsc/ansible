@@ -1,3 +1,8 @@
 ---
-- { include: jenkins.yml }
-- { include: nginx.yml }
+- name: Configure Jenkins reverse proxy
+  action: copy src=site dest=/etc/nginx/sites-enabled/ci.pittcsc.org
+  notify: Restart nginx
+
+- name: Allow HTTP traffic
+  action: ufw direction=in proto=tcp port=80 rule=allow
+  notify: Reload ufw
