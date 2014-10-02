@@ -1,0 +1,4 @@
+---
+- name: Allow public SSH traffic
+  action: ufw direction=in port=22 rule=allow
+  notify: Reload ufw

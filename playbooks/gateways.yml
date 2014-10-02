@@ -2,3 +2,5 @@
 - hosts: gateways
   roles:
     - common
+    - internal
+    - gateway
