@@ -1,6 +1,6 @@
 ---
-- { include: network.yml }
-- { include: apt.yml }
-- { include: bash.yml }
-- { include: build.yml }
-- { include: git.yml }
+- include: network.yml
+- include: apt.yml
+- include: bash.yml
+- include: build.yml
+- include: git.yml
