@@ -1,3 +1,6 @@
 ---
 - name: Install nginx
   action: apt pkg=nginx state=latest
+
+- name: Delete default site
+  action: file path=/etc/nginx/sites-enabled/default state=absent
