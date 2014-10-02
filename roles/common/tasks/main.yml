@@ -4,4 +4,3 @@
 - include: bash.yml
 - include: build.yml
 - include: git.yml
-- include: users.yml
