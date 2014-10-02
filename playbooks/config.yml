@@ -3,4 +3,4 @@
   roles:
     - common
     - internal
-    - config
+    - ansible
