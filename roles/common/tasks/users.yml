@@ -1,0 +1,4 @@
+---
+- name: Create users
+  action: user name={{ item.name }}
+  with_items: users
