@@ -1,4 +1,9 @@
 ---
 users:
   - name: george
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQTGow4GXZPrNkXN+0NRq8XmMMqznykri1KXS/iRHfx5s1BcGHx+43tm7yQ89BonIyJT9bqdRQUgqS4MPz61crJK40cextQF5gTzLJqSowmOMKDrZtOdlsvXeHGS+Wf6yRGHDIa+P0OrJsXjYrq3nfbX9ZGvYIqKvJmcwiYwzA/qTeBQ2biNcTmtxQwO8jY2AP+9RwWQiBmPz6MhT+g0wAaapAWnC6Qjy3ZkNR30PxuhBYwNdg0asBY49K+ML/negn6OsO8GswBko92bg/Tf2VRWSBiNrZIOB/9cQmmy6w0GXBw831R5E43dwZGYgADy998KvHur3oZ7SLfcc4GP5P george@basecamp.com
+
   - name: alex
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2MXz+tK1K5lRG3Hvyb0QG+8C5CTcef+DWLdddqr/Z9wryEyu7syuOZkK5ZxowwY7+xUq/W+FRswirFQuOX+HxPjzfr35nKJOzB97mobe9EZJpGHebGZJanwOkmb7t9ommjVnsqqedDCt7UkDXT3G2N26fL7e8fP+tbGuQug+7I0r3u7NlSwtCHIyMwZTCTYuZAF9BzCxbi9uPTsgDVoM4dKLE8HX0cGRdoUEYHImUkX8Lqu++aRj1ndH5et9iXSwsAbA1UytUEyycXvCCWN5ziqh6kRcEqWEYVVL4YEc7HQlPpGuFccb6Het3LxmWbmjilAF8rMbzYTj0mMrEMluR alex.lafroscia@gmail.com

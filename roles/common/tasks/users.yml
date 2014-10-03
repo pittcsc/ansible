@@ -1,4 +1,10 @@
 ---
 - name: Create users
-  action: user name={{ item.name }}
+  action: user name={{ item.name }} state=present
   with_items: users
+
+- name: Set authorized keys for users
+  action: authorized_key user={{ item.0.name }} key={{ item.1 }} state=present
+  with_subelements:
+    - users
+    - authorized_keys
