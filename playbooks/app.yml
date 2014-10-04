@@ -1,7 +1,8 @@
 ---
-- hosts: knowhow
+- hosts: app
   roles:
     - common
     - internal
     - nodejs
     - mongodb
+    - app

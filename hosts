@@ -11,5 +11,5 @@ config-02
 [ci]
 ci-01
 
-[knowhow]
-knowhow-01
+[app]
+app-01

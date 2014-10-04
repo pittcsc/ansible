@@ -18,4 +18,4 @@ dns-02.do-nyc3.pittcsc.org.	IN	A	10.132.248.122
 gateway-01.do-nyc3.pittcsc.org.	IN	A	10.132.223.240
 config-02.do-nyc3.pittcsc.org.	IN	A	10.132.236.208
 ci-01.do-nyc3.pittcsc.org.			IN	A	10.132.243.53
-knowhow-01.do-nyc3.pittcsc.org.	IN	A	10.132.251.252
+app-01.do-nyc3.pittcsc.org.	    IN	A	10.132.224.20

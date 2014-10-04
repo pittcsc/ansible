@@ -18,4 +18,4 @@ $TTL	604800
 240.223	IN	PTR gateway-01.do-nyc3.pittcsc.org.
 208.236	IN	PTR	config-02.do-nyc3.pittcsc.org.
 53.243	IN	PTR	ci-01.do-nyc3.pittcsc.org.
-252.251	IN	PTR knowhow-01.do-nyc3.pittcsc.org.
+20.224	IN	PTR knowhow-01.do-nyc3.pittcsc.org.
