@@ -1,0 +1,3 @@
+---
+- name: Configure sudoers
+  action: copy src=sudoers dest=/etc/sudoers
