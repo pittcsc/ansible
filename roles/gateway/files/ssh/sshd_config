@@ -30,7 +30,6 @@ PasswordAuthentication no
 PermitEmptyPasswords no
 RSAAuthentication yes
 PubkeyAuthentication yes
-AuthenticationMethods "publickey,keyboard-interactive:pam"
 
 # Don't read the user's ~/.rhosts and ~/.shosts files
 IgnoreRhosts yes

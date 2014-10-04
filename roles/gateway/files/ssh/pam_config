@@ -1,7 +1,7 @@
 # PAM configuration for the Secure Shell service
 
-# Enable Google Authenticator 2FA.
-auth required pam_google_authenticator.so
+# Standard Un*x authentication.
+@include common-auth
 
 # Disallow non-root logins when /etc/nologin exists.
 account    required     pam_nologin.so
