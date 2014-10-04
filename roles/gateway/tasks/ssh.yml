@@ -2,3 +2,11 @@
 - name: Configure sshd
   action: copy src=ssh/sshd_config dest=/etc/ssh/sshd_config
   notify: Restart ssh
+
+- name: Install Google Authenticator PAM module
+  action: apt package=libpam-google-authenticator state=latest
+  notify: Restart ssh
+
+- name: Configure PAM for SSH
+  action: copy src=ssh/pam_config dest=/etc/pam.d/sshd
+  notify: Restart ssh
