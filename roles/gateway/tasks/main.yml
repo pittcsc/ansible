@@ -1,2 +1,2 @@
 ---
-- include: sshd.yml
+- include: ssh.yml
