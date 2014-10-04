@@ -1,8 +1,5 @@
 # PAM configuration for the Secure Shell service
 
-# Standard Un*x authentication.
-@include common-auth
-
 # Enable Google Authenticator 2FA.
 auth required pam_google_authenticator.so
 
