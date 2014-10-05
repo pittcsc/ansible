@@ -1,0 +1,4 @@
+---
+- name: Configure sshd
+  action: copy src=ssh/sshd_config dest=/etc/ssh/sshd_config
+  notify: Restart ssh
