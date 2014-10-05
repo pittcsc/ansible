@@ -1,5 +1,5 @@
 ---
-- name: Install NPM packages
+- name: Install Node.js packages
   action: npm name={{ item }} state=latest global=yes
   with_items:
     - gulp
