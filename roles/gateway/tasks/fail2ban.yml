@@ -1,0 +1,7 @@
+---
+- name: Install Fail2Ban
+  action: apt pkg=fail2ban state=latest
+
+- name: Configure Fail2Ban
+  action: copy src=fail2ban/jail.local dest=/etc/fail2ban/jail.local
+  notify: Restart Fail2Ban
