@@ -2,7 +2,7 @@
 dns-01
 dns-02
 
-[gateways]
+[gateway]
 gateway-01
 
 [ops]
