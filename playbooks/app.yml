@@ -3,7 +3,5 @@
   roles:
     - common
     - internal
-    - nodejs
-    - mongodb
     - app
     - knowhow
