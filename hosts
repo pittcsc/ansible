@@ -6,7 +6,7 @@ dns-02
 gateway-01
 
 [config]
-config-02
+ops-01
 
 [ci]
 ci-01
