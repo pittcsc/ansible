@@ -22,3 +22,7 @@
 - name: Configure nginx site
   action: copy src=site dest=/etc/nginx/sites-enabled/knowhow.pittcsc.org
   notify: Restart nginx
+
+- name: Allow HTTP traffic
+  action: ufw direction=in proto=tcp port=80 rule=allow
+  notify: Reload ufw
