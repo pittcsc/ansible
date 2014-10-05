@@ -1,6 +1,5 @@
 server {
   listen 80;
-  listen [::]:80 default;
 
   server_name api.knowhow.pittcsc.org;
 
