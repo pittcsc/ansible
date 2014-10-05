@@ -14,7 +14,7 @@
 - name: Check out app repositories
   action: git repo={{ item.repo }} dest={{ item.dest }} update=no accept_hostkey=yes
   with_items:
-    - repo: git@github.com:Pitt-CSC/knowhow-frontend.git
+    - repo: https://github.com/Pitt-CSC/knowhow-frontend.git
       dest: /u/apps/knowhow/frontend
-    - repo: git@github.com:Pitt-CSC/knowhow-backend.git
+    - repo: https://github.com/Pitt-CSC/knowhow-backend.git
       dest: /u/apps/knowhow/backend
