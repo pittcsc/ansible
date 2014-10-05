@@ -12,6 +12,7 @@
 
 - name: Install Jenkins
   action: apt pkg=jenkins state=latest
+  notify: Restart Jenkins
 
 - name: Set Jenkins defaults
   action: copy src=defaults dest=/etc/default/jenkins
