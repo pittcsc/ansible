@@ -1,1 +1,9 @@
 ---
+- name: Add key for MongoDB repository to APT
+  action: apt_key url=http://docs.mongodb.org/10gen-gpg-key.asc state=present
+
+- name: Add MongoDB repository to APT
+  action: apt_repository repo="deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen" update_cache=yes
+
+- name: Install MongoDB
+  action: apt pkg=mongodb-org state=latest
