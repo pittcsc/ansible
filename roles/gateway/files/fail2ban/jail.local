@@ -58,7 +58,7 @@ destemail = pittcsc+fail2ban@gmail.com
 
 #
 # Name of the sender for mta actions
-sendername = Fail2Ban
+sendername = Fail2Ban (gateway)
 
 #
 # ACTIONS
