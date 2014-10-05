@@ -1,6 +1,6 @@
 ---
 - name: Install NPM packages
-  action: npm name={{ item }} state=latest
+  action: npm name={{ item }} state=latest global=yes
   with_items:
     - gulp
     - ember-cli
