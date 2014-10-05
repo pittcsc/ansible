@@ -3,6 +3,7 @@
   action: npm name={{ item }} state=latest global=yes
   with_items:
     - gulp
+    - bower
     - ember-cli
 
 - name: Create app directories
