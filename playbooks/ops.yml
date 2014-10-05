@@ -1,5 +1,5 @@
 ---
-- hosts: config
+- hosts: ops
   roles:
     - common
     - internal

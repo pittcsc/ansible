@@ -5,7 +5,7 @@ dns-02
 [gateways]
 gateway-01
 
-[config]
+[ops]
 ops-01
 
 [ci]
