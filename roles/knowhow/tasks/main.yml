@@ -20,8 +20,11 @@
     - repo: https://github.com/Pitt-CSC/knowhow-backend.git
       dest: /u/apps/knowhow/backend
 
-- name: Configure nginx site
-  action: copy src=site dest=/etc/nginx/sites-enabled/knowhow.pittcsc.org
+- name: Configure nginx sites
+  action: copy src={{ item }} dest=/etc/nginx/sites-enabled/{{ item }}
+  with_items:
+    - knowhow.pittcsc.org
+    - api.knowhow.pittcsc.org
   notify: Restart nginx
 
 - name: Allow HTTP traffic
