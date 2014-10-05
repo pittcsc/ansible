@@ -4,3 +4,9 @@
   with_items:
     - gulp
     - ember-cli
+
+- name: Create app directories
+  action: file path={{ item }} state=directory
+  with_items:
+    - /u/apps/knowhow/frontend
+    - /u/apps/knowhow/backend
