@@ -1,0 +1,3 @@
+---
+- name: Create apps directory
+  action: file path=/u/apps state=directory
