@@ -1,0 +1,10 @@
+server {
+  listen 80;
+  listen [::]:80 default ipv6only=on;
+
+  server_name knowhow.pittcsc.org;
+
+  location / {
+    root /u/apps/knowhow/frontend;
+  }
+}

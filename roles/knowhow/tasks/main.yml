@@ -18,3 +18,7 @@
       dest: /u/apps/knowhow/frontend
     - repo: https://github.com/Pitt-CSC/knowhow-backend.git
       dest: /u/apps/knowhow/backend
+
+- name: Configure nginx site
+  action: copy src=site dest=/etc/nginx/sites-enabled/knowhow.pittcsc.org
+  notify: Restart nginx
