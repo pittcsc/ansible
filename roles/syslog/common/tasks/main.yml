@@ -1,0 +1,3 @@
+---
+- name: Install syslog-ng
+  action: apt pkg=syslog-ng state=installed
