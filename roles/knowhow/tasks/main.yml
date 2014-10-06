@@ -1,6 +1,6 @@
 ---
 - name: Install Node.js packages
-  action: npm name={{ item }} state=latest global=yes
+  action: npm name={{ item }} state=installed global=yes
   with_items:
     - gulp
     - bower
