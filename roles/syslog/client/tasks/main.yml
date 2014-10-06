@@ -1,0 +1,4 @@
+---
+- name: Configure syslog-ng
+  action: template src=syslog-ng.conf dest=/etc/syslog-ng/syslog-ng.conf
+  notify: Restart syslog-ng
