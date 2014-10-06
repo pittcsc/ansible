@@ -6,5 +6,9 @@
   action: apt_repository repo="deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen" update_cache=yes
 
 - name: Install MongoDB
-  action: apt pkg=mongodb-org state=latest
+  action: apt pkg=mongodb-org state=installed
+  notify: Restart MongoDB
+
+- name: Configure MongoDB
+  action: copy src=mongod.conf dest=/etc/mongod.conf
   notify: Restart MongoDB
