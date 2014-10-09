@@ -1,3 +1,0 @@
----
-- name: Install sendmail
-  action: apt pkg=sendmail state=latest
