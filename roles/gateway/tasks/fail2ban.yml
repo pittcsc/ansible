@@ -7,7 +7,7 @@
   notify: Restart Fail2Ban
 
 - name: Add custom Fail2Ban actions
-  action: copy src=fail2ban/actions.d/{{ item }} dest=/etc/fail2ban/actions.d/{{ item }}
+  action: copy src=fail2ban/action.d/{{ item }} dest=/etc/fail2ban/action.d/{{ item }}
   with_items:
     - slack.conf
   notify: Restart Fail2Ban
