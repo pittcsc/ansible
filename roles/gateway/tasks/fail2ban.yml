@@ -5,3 +5,9 @@
 - name: Configure Fail2Ban
   action: copy src=fail2ban/jail.local dest=/etc/fail2ban/jail.local
   notify: Restart Fail2Ban
+
+- name: Add custom Fail2Ban actions
+  action: copy src=fail2ban/actions.d/{{ item }} dest=/etc/fail2ban/actions.d/{{ item }}
+  with_items:
+    - slack.conf
+  notify: Restart Fail2Ban
