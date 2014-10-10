@@ -1,0 +1,3 @@
+---
+- name: Install Redis
+  action: apt pkg=redis-server state=installed
