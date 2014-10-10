@@ -2,3 +2,4 @@
 dependencies:
   - redis
   - nginx
+  - ruby
