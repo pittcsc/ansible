@@ -1,11 +1,14 @@
+upstream handy {
+  server unix:/u/apps/handy/shared/sockets/unicorn.sock fail_timeout=0;
+}
+
 server {
   listen 80;
-
   server_name handy.pittcsc.org;
 
   location @handy {
-    proxy_pass http://127.0.0.1:4000;
-    proxy_redirect default;
+    proxy_pass http://handy;
+    proxy_redirect off;
 
     proxy_set_header Host $host;
     proxy_set_header X-Real-IP $remote_addr;
