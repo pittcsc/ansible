@@ -1,5 +1,5 @@
 upstream handy {
-  server unix:/u/apps/handy/shared/sockets/unicorn.sock fail_timeout=0;
+  server unix:///u/apps/handy/shared/sockets/unicorn.sock fail_timeout=0;
 }
 
 server {
