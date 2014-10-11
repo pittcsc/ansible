@@ -6,6 +6,9 @@ server {
   listen 80;
   server_name handy.pittcsc.org;
 
+  root /u/apps/handy/public;
+  try_files $uri @handy;
+  
   location @handy {
     proxy_pass http://handy;
     proxy_redirect off;
