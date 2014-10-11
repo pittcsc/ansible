@@ -8,8 +8,5 @@ gateway-01
 [ops]
 ops-01
 
-[ci]
-ci-01
-
 [app]
 app-01
