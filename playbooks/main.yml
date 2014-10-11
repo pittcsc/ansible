@@ -2,5 +2,4 @@
 - include: dns.yml
 - include: gateway.yml
 - include: ops.yml
-- include: ci.yml
 - include: app.yml
