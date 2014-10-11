@@ -2,6 +2,10 @@
 - name: Install nginx
   action: apt pkg=nginx state=latest
 
+- name: Configure nginx
+  action: template src=nginx.conf dest=/etc/nginx/nginx.conf
+  notify: Restart nginx
+
 - name: Delete default site
   action: file path=/etc/nginx/sites-enabled/default state=absent
   notify: Restart nginx
