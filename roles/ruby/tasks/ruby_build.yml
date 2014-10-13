@@ -2,5 +2,14 @@
 - name: Install ruby-build
   action: git repo=https://github.com/sstephenson/ruby-build.git version=master dest=/opt/rbenv/plugins/ruby_build
 
+- name: Install Ruby dependencies
+  action: apt pkg={{ item }} state=present
+  with_items:
+    - openssl
+    - libssl-dev
+    - libreadline-dev
+    - ncurses-dev
+    - curl
+
 - name: Configure ruby-build
   action: copy src=ruby_build.sh dest=/etc/profile.d/ruby_build.sh
