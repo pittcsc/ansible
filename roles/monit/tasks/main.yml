@@ -3,5 +3,5 @@
   action: apt pkg=monit state=installed
 
 - name: Configure Monit
-  action: copy src=monitc dest=/etc/monit/monitrc
+  action: copy src=monitrc dest=/etc/monit/monitrc
   notify: Restart Monit
