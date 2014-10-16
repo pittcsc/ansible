@@ -1,18 +1,18 @@
 ---
 - name: Check global Ruby installed
-  action: shell "bash -l -c 'rbenv versions | grep {{ var | ruby.global }} -q'"
+  action: shell "rbenv versions | grep {{ var | ruby.global }} -q" executable=/bin/bash
   when: ruby.global
   register: ruby.global_installed
 
 - name: Install global Ruby
-  action: shell "bash -l -c 'rbenv install {{ var | ruby.global }}'"
+  action: shell "bash -l -c 'rbenv install {{ var | ruby.global }}'" executable=/bin/bash
   when: ruby.global and ruby.global_installed.rc != 0
 
 - name: Check global Ruby set
-  action: shell "bash -l -c 'rbenv global | grep ^{{ var | ruby.global }} -q'"
+  action: shell "bash -l -c 'rbenv global | grep ^{{ var | ruby.global }} -q'" executable=/bin/bash
   when: ruby.global
   register: ruby.global_set
 
 - name: Set global Ruby
-  action: shell "bash -l -c 'rbenv global {{ var | ruby.global }}'"
+  action: shell "bash -l -c 'rbenv global {{ var | ruby.global }}'" executable=/bin/bash
   when: ruby.global and ruby.global_set.rc != 0
