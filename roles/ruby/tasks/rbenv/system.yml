@@ -1,0 +1,18 @@
+---
+- name: Check global Ruby installed
+  action: shell "rbenv versions | grep {{ var | ruby.global }} -q"
+  when: ruby.global
+  register: ruby.global_installed
+
+- name: Install global Ruby
+  action: shell "rbenv install {{ var | ruby.global }}"
+  when: ruby.global and ruby.global_installed.rc != 0
+
+- name: Check global Ruby set
+  action: shell "rbenv global | grep ^{{ var | ruby.global }}"
+  when: ruby.global
+  register: ruby.global_set
+
+- name: Set global Ruby
+  action: shell "rbenv global {{ var | ruby.global }}"
+  when: ruby.global and ruby.global_set.rc != 0
