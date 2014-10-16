@@ -1,4 +1,4 @@
 ---
 - include: rbenv.yml
 - include: ruby_build.yml
-- include: rbenv/system.yml
+- include: rbenv/global.yml
