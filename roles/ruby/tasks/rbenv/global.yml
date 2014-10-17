@@ -1,6 +1,6 @@
 ---
 - name: Install global Ruby
-  action: shell "/bin/bash -l -c '/opt/rbenv/bin/rbenv install {{ var | ruby.global }} --skip-existing'" creates="/opt/rbenv/versions/{{ ruby.global }}"
+  action: shell "/bin/bash -l -c '/opt/rbenv/bin/rbenv install {{ ruby.global }} --skip-existing'" creates="/opt/rbenv/versions/{{ ruby.global }}"
   when: ruby.global
 
 - name: Check that global Ruby is set
