@@ -1,4 +1,4 @@
-from ansible.module_utils.basic import *
+#!/usr/bin/env python
 
 def versions(module):
   (status, output, error) = module.run_command('rbenv versions --bare', check_rc=True)
@@ -10,7 +10,7 @@ def global_version(module):
 
 def install(module):
   if not module.check_mode:
-    command = 'rbenv_install %s' % module.params['version']
+    command = 'rbenv install %s' % module.params['version']
     module.run_command(command, check_rc=True)
 
 def uninstall(module):
@@ -20,7 +20,7 @@ def uninstall(module):
 
 def set_global_version(module):
   if not module.check_mode:
-    command = 'rbenv global %s' module.params['version']
+    command = 'rbenv global %s' % module.params['version']
     module.run_command(command, check_rc=True)
 
 def main():
@@ -50,4 +50,5 @@ def main():
 
   module.exit_json(changed=changed, version=version, state=state)
 
+from ansible.module_utils.basic import *
 main()
