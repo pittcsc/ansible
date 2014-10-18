@@ -3,7 +3,7 @@
   action: git repo=https://github.com/sstephenson/rbenv.git version=master dest=/opt/rbenv
 
 - name: Set up rbenv directories
-  action: file path={{ item }} state=directory
+  action: file path=/opt/rbenv/{{ item }} state=directory
   with_items:
     - shims
     - versions
