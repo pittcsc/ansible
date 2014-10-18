@@ -4,5 +4,6 @@
 - include: bash.yml
 - include: build.yml
 - include: git.yml
+- include: groups.yml
 - include: users.yml
 - include: sudoers.yml
