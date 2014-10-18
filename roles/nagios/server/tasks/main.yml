@@ -1,4 +1,4 @@
----
+---    
 - name: Install Nagios
   action: apt pkg=nagios3=3.5.1-1ubuntu1 state=installed
 

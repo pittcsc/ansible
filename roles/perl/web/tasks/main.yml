@@ -1,0 +1,6 @@
+---
+- name: Install fcgiwrap
+  action: apt pkg=fcgiwrap state=installed
+
+- name: Install spawn-fcgi
+  action: pkg=spawn-fcgi state=installed

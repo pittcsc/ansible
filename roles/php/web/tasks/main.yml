@@ -1,6 +1,3 @@
 ---
-- name: Install PHP 5
-  action: apt pkg=php5 state=installed
-
 - name: Install PHP FPM
   action: apt pkg=php5-fpm state=installed

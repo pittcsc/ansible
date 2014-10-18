@@ -1,4 +1,5 @@
 ---
 dependencies:
   - nginx
-  - php
+  - php/web
+  - perl/web
