@@ -3,3 +3,4 @@
 - include: gateway.yml
 - include: ops.yml
 - include: app.yml
+- include: web.yml

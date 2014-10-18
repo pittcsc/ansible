@@ -1,0 +1,11 @@
+---
+- name: Create site directory
+  action: file path=/u/sites/hackpitt state=directory
+
+- name: Configure nginx site
+  action: copy src=hackpitt.pittcsc.org dest=/etc/nginx/sites-enabled/hackpitt.pittcsc.org
+  notify: Restart nginx
+
+- name: Allow HTTP traffic
+  action: ufw direction=in proto=tcp port=80 rule=allow
+  notify: Reload ufw

@@ -1,0 +1,3 @@
+---
+- name: Create sites directory
+  action: file path=/u/sites state=directory
