@@ -1,3 +1,3 @@
 ---
 - name: Install Bash
-  action: apt name=bash=4.3-7ubuntu1.4 state=present
+  action: apt name=bash=4.3-7ubuntu1.5 state=present
