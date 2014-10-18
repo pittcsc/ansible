@@ -5,4 +5,4 @@
     - internal
     - ansible
     - syslog/server
-    - nginx/server
+    - nagios/server
