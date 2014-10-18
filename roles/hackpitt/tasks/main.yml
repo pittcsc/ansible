@@ -5,6 +5,9 @@
 - name: Create site directory
   action: file path=/u/sites/hackpitt state=directory group=hackpitt
 
+- name: Check out site repository
+  action: git repo=https://github.com/Pitt-CSC/hackpitt.pittcsc.org.git dest=/u/sites/hackpitt update=no accept_hostkey=yes
+
 - name: Configure nginx site
   action: copy src=hackpitt.pittcsc.org dest=/etc/nginx/sites-enabled/hackpitt.pittcsc.org
   notify: Restart nginx
