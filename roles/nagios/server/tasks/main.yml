@@ -4,8 +4,8 @@
 
 - name: Configure nginx site
   action: copy src=nagios.pittcsc.org dest=/etc/nginx/sites-available/nagios.pittcsc.org
-  notify: Restart Nginx
+  notify: Restart nginx
 
 - name: Enable nginx site
   action: file path=/etc/nginx/sites-enabled/nagios.pittcsc.org src=/etc/nginx/sites-available/nagios.pittcsc.org state=link
-  notify: Restart Nginx
+  notify: Restart nginx
