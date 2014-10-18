@@ -1,8 +1,4 @@
 ---
-- name: Install global Ruby
-  action: shell /bin/bash -lc "rbenv install {{ ruby.global }} --skip-existing"
-  when: ruby.global
-
-- name: Set global Ruby
-  action: shell /bin/bash -lc "rbenv global {{ ruby.global }}"
+- name: Set global Ruby version
+  action: rbenv version={{ ruby.global }} state=global
   when: ruby.global
