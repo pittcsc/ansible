@@ -4,6 +4,6 @@ server {
   server_name hackpitt.pittcsc.org;
 
   location / {
-    root /u/sites/hackpitt;
+    root /u/sites/hackpitt/current/public;
   }
 }
