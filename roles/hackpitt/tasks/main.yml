@@ -1,6 +1,9 @@
 ---
+- name: Create hackpitt user group
+  action: group name=hackpitt state=present
+
 - name: Create site directory
-  action: file path=/u/sites/hackpitt state=directory
+  action: file path=/u/sites/hackpitt state=directory group=hackpitt
 
 - name: Configure nginx site
   action: copy src=hackpitt.pittcsc.org dest=/etc/nginx/sites-enabled/hackpitt.pittcsc.org
