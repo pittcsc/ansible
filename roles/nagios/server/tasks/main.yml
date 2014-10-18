@@ -1,0 +1,9 @@
+---
+- name: Install Nagios
+  action: apt pkg=nagios3=3.5.1-1ubuntu1 state=installed
+
+- name: Configure nginx site
+  action: copy src=nagios.pittcsc.org dest=/etc/nginx/sites-available/nagios.pittcsc.org
+
+- name: Enable nginx site
+  action: file path=/etc/nginx/sites-enabled/nagios.pittcsc.org src=/etc/nginx/sites-available/nagios.pittcsc.org state=link
