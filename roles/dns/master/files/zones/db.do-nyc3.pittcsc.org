@@ -3,7 +3,7 @@
 ;
 $TTL	604800
 @	IN	SOA	dns-01.do-nyc3.pittcsc.org. admin.do-nyc3.pittcsc.org. (
-			     13		; Serial
+			     14		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -18,3 +18,4 @@ dns-02.do-nyc3.pittcsc.org. IN  A 10.132.248.122
 gateway-01.do-nyc3.pittcsc.org. IN  A 10.132.223.240
 ops-01.do-nyc3.pittcsc.org.     IN  A 10.132.236.208
 app-01.do-nyc3.pittcsc.org.     IN  A 10.132.243.53
+web-01.do-nyc3.pittcsc.org.     IN  A 10.132.224.20

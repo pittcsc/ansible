@@ -14,6 +14,7 @@
     - 10.132.223.240  # gateway-01
     - 10.132.236.208  # ops-01
     - 10.132.243.53   # app-01
+    - 10.132.224.20   # web-01
   notify: Reload ufw
 
 - name: Allow inbound SSH traffic
