@@ -9,3 +9,7 @@
 - name: Enable nginx site
   action: file path=/etc/nginx/sites-enabled/nagios.pittcsc.org src=/etc/nginx/sites-available/nagios.pittcsc.org state=link
   notify: Restart nginx
+
+- name: Allow HTTP traffic
+  action: ufw direction=in proto=tcp port=80 rule=allow
+  notify: Reload ufw
