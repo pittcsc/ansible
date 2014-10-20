@@ -3,7 +3,7 @@ upstream php5-fpm {
 }
 
 upstream fcgiwrap {
-  server unix:/var/run/fcgiwrap.sock;
+  server unix:/var/run/fcgiwrap.socket;
 }
 
 server {
