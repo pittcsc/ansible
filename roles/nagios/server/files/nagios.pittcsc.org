@@ -13,9 +13,6 @@ server {
   root /usr/share/nagios3/htdocs;
   index index.php index.html;
 
-  auth_basic "Nagios";
-  auth_basic_user_file /etc/nagios3/htpasswd.users;
-
   location /stylesheets {
     alias /etc/nagios3/stylesheets;
   }
