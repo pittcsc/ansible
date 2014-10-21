@@ -8,4 +8,4 @@
   with_subelements:
     - users
     - authorized_keys
-  when: item.0.state is "present"
+  when: item.0.state == "present"
