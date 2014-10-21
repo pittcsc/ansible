@@ -17,7 +17,8 @@
 
 - name: Configure Nagios
   action: copy src=conf/{{ item }} dest=/etc/nagios3/conf.d/{{ item }} owner=nagios group=nagios
-  with_fileglob: conf/*
+  with_fileglob:
+    - conf/*
   notify: Restart Nagios
 
 - name: Install NRPE plugin
