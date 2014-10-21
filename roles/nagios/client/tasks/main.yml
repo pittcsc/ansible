@@ -4,3 +4,4 @@
 
 - name: Configure NRPE server
   action: copy src=nrpe.cfg dest=/etc/nagios/nrpe.cfg owner=nagios group=nagios
+  notify: Restart NRPE server

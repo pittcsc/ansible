@@ -1,0 +1,3 @@
+---
+- name: Restart NRPE server
+  action: service name=nagios-nrpe-server state=restarted
