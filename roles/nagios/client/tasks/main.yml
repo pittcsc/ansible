@@ -1,3 +1,6 @@
 ---
 - name: Install NRPE server
   action: apt pkg=nagios-nrpe-server state=installed
+
+- name: Configure NRPE server
+  action: copy src=nrpe.cfg dest=/etc/nagios/nrpe.cfg owner=nagios group=nagios
