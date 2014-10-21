@@ -1,6 +1,6 @@
 ---
 - name: Create users
-  action: user name={{ item.name }} state=present shell=/bin/bash groups={{ item.groups }}
+  action: user name={{ item.name }} password={{ item.password }} state=present shell=/bin/bash groups={{ item.groups }}
   with_items: users
 
 - name: Set authorized keys for users
