@@ -16,7 +16,7 @@
   notify: Restart Nagios
 
 - name: Configure Nagios
-  action: copy src={{ item }} dest=/etc/nagios3/conf.d/{{ item }} owner=nagios group=nagios
+  action: copy src={{ item }} dest=/etc/nagios3/conf.d/ owner=nagios group=nagios
   with_fileglob:
     - conf/*
   notify: Restart Nagios
