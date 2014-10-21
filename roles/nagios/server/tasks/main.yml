@@ -14,6 +14,10 @@
     - contacts.cfg
   notify: Restart Nagios
 
+- name: Install NRPE plugin
+  action: apt pkg=nagios-nrpe-plugin state=installed
+  notify: Restart Nagios
+  
 - name: Configure nginx site
   action: copy src=nagios.pittcsc.org dest=/etc/nginx/sites-available/nagios.pittcsc.org
   notify: Restart nginx
