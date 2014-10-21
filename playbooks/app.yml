@@ -4,6 +4,7 @@
     - common
     - internal
     - app
+    - nagios/client
     - syslog/client
     - knowhow
     - handy
