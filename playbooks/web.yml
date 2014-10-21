@@ -3,5 +3,6 @@
   roles:
     - common
     - internal
+    - nagios/client
     - web
     - hackpitt
