@@ -2,6 +2,18 @@
 - name: Install Nagios
   action: apt pkg=nagios3=3.5.1-1ubuntu1 state=installed
 
+- name: Delete default Nagios config files
+  action: file path=/etc/nagios3/conf.d/{{ item }} state=absent
+  with_items:
+    - contacts_nagios2.cfg
+  notify: Restart Nagios
+
+- name: Configure Nagios
+  action: copy src=conf/{{ item }} dest=/etc/nagios3/conf.d/{{ item }} owner=nagios group=nagios
+  with_items:
+    - contacts.cfg
+  notify: Restart Nagios
+
 - name: Configure nginx site
   action: copy src=nagios.pittcsc.org dest=/etc/nginx/sites-available/nagios.pittcsc.org
   notify: Restart nginx
