@@ -3,16 +3,17 @@
   action: apt pkg=nagios3=3.5.1-1ubuntu1 state=installed
 
 - name: Delete default Nagios config files
-  action: file path=/etc/nagios3/conf.d/{{ item }} state=absent
+  action: file path=/etc/nagios3/{{ item }} state=absent
   with_items:
-    - contacts_nagios2.cfg
-    - extinfo_nagios2.cfg
-    - generic-host_nagios2.cfg
-    - generic-service_nagios2.cfg
-    - hostgroups_nagios2.cfg
-    - localhost_nagios2.cfg
-    - services_nagios2.cfg
-    - timeperiods_nagios2.cfg
+    - commands.cfg
+    - conf.d/contacts_nagios2.cfg
+    - conf.d/extinfo_nagios2.cfg
+    - conf.d/generic-host_nagios2.cfg
+    - conf.d/generic-service_nagios2.cfg
+    - conf.d/hostgroups_nagios2.cfg
+    - conf.d/localhost_nagios2.cfg
+    - conf.d/services_nagios2.cfg
+    - conf.d/timeperiods_nagios2.cfg
   notify: Restart Nagios
 
 - name: Create Nagios config directories
