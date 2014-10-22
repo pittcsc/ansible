@@ -29,6 +29,7 @@
     - hosts.cfg
     - services.cfg
     - timeperiods.cfg
+    - commands.cfg
     - hosts/ops-01.cfg
     - hosts/app-01.cfg
   notify: Restart Nagios
