@@ -15,4 +15,4 @@
 - name: Add Nagios plugins
   action: copy src=plugins/{{ item }} dest=/u/nagios/plugins/{{ item }} owner=nagios group=nagios
   with_items:
-    - check_mem.sh
+    - check_mem
