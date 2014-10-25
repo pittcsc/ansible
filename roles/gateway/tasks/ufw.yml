@@ -17,6 +17,12 @@
     - 10.132.224.20   # web-01
   notify: Reload ufw
 
+- name: Deny all inbound traffic from suspicious IPs
+  action: ufw direction=in proto=any from_ip={{ item }} rule=deny
+  with_items:
+    - 209.239.114.179
+  notify: Reload ufw
+
 - name: Allow inbound SSH traffic
   action: ufw direction=in port=22 rule=allow
   notify: Reload ufw
