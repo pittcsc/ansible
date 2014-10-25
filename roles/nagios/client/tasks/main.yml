@@ -13,6 +13,6 @@
     - /u/nagios/plugins
 
 - name: Add Nagios plugins
-  action: copy src=plugins/{{ item }} dest=/u/nagios/plugins/{{ item }} owner=nagios group=nagios
+  action: copy src=plugins/{{ item }} dest=/u/nagios/plugins/{{ item }} owner=nagios group=nagios mode=744
   with_items:
     - check_mem
