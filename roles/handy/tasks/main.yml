@@ -3,7 +3,11 @@
   action: file path=/u/apps/handy state=directory
 
 - name: Configure nginx site
-  action: copy src=handy.pittcsc.org dest=/etc/nginx/sites-enabled/handy.pittcsc.org
+  action: copy src=handy.pittcsc.org dest=/etc/nginx/sites-available/handy.pittcsc.org
+  notify: Restart nginx
+
+- name: Enable nginx site
+  action: file path=/etc/nginx/sites-enabled/handy.pittcsc.org src=/etc/nginx/sites-available/handy.pittcsc.org state=link force=yes
   notify: Restart nginx
 
 - name: Allow HTTP traffic

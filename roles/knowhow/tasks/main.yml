@@ -21,7 +21,14 @@
       dest: /u/apps/knowhow/backend
 
 - name: Configure nginx sites
-  action: copy src={{ item }} dest=/etc/nginx/sites-enabled/{{ item }}
+  action: copy src={{ item }} dest=/etc/nginx/sites-available/{{ item }}
+  with_items:
+    - knowhow.pittcsc.org
+    - api.knowhow.pittcsc.org
+  notify: Restart nginx
+
+- name: Enable nginx sites
+  action: file path=/etc/nginx/sites-enabled/{{ item }} src=/etc/nginx/sites-available/{{ item }} state=link force=yes
   with_items:
     - knowhow.pittcsc.org
     - api.knowhow.pittcsc.org
