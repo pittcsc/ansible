@@ -1,3 +1,0 @@
----
-- name: Restart Jenkins
-  action: service name=jenkins state=restarted
