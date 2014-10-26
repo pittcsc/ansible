@@ -4,11 +4,11 @@
     - common
     - internal
     - nagios/client
-    - dns/master
+    - dns/primary
 
 - hosts: dns-02
   roles:
     - common
     - internal
     - nagios/client
-    - dns/slave
+    - dns/secondary
