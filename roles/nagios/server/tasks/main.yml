@@ -36,9 +36,6 @@
     - hosts/web-01.cfg
   notify: Restart Nagios
 
-- name: Delete Nagios configuration for decommissioned host
-  action: file path=/etc/nagios3/conf.d/hosts/dns-02.cfg state=absent
-
 - name: Install NRPE plugin
   action: apt pkg=nagios-nrpe-plugin state=installed
   notify: Restart Nagios

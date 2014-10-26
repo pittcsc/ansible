@@ -16,10 +16,6 @@
     - 10.132.224.20   # web-01
   notify: Reload ufw
 
-- name: Deny inbound traffic from decommissioned internal host
-  action: ufw direction=in proto=any from_ip=10.132.248.122 rule=allow delete=yes
-  notify: Reload ufw
-
 - name: Deny other inbound traffic
   action: ufw direction=incoming policy=deny
   notify: Reload ufw
