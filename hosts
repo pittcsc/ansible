@@ -1,6 +1,5 @@
 [dns]
 dns-01
-dns-02
 
 [gateway]
 gateway-01

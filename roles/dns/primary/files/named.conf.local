@@ -1,16 +1,8 @@
 zone "do-nyc3.pittcsc.org" {
   type master;
   file "/etc/bind/zones/db.do-nyc3.pittcsc.org";
-
-  allow-transfer {
-    10.132.248.122;
-  };
 };
 zone "132.10.in-addr.arpa" {
   type master;
   file "/etc/bind/zones/db.10.132";
-
-  allow-transfer {
-    10.132.248.122;
-  };
 };

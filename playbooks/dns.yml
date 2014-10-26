@@ -1,14 +1,7 @@
 ---
-- hosts: dns-01
+- hosts: dns
   roles:
     - common
     - internal
     - nagios/client
     - dns/primary
-
-- hosts: dns-02
-  roles:
-    - common
-    - internal
-    - nagios/client
-    - dns/secondary
