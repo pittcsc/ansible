@@ -11,7 +11,7 @@
 
 - name: Enable nginx site
   action: file path=/etc/nginx/sites-enabled/hackpitt.pittcsc.org src=/etc/nginx/sites-available/hackpitt.pittcsc.org state=link force=yes
-  notify: Retart nginx
+  notify: Restart nginx
 
 - name: Allow HTTP traffic
   action: ufw direction=in proto=tcp port=80 rule=allow
