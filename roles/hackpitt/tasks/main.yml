@@ -10,7 +10,7 @@
   notify: Restart nginx
 
 - name: Enable nginx site
-  action: file path=/etc/nginx/sites-enabled/hackpitt.pittcsc.org src=/etc/nginx/sites-available/hackpitt.pittcsc.org state=link
+  action: file path=/etc/nginx/sites-enabled/hackpitt.pittcsc.org src=/etc/nginx/sites-available/hackpitt.pittcsc.org state=link force=yes
   notify: Retart nginx
 
 - name: Allow HTTP traffic
