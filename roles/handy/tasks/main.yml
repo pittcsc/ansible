@@ -1,6 +1,6 @@
 ---
 - name: Create app directory
-  action: file path=/u/apps/handy state=directory
+  action: file path=/u/apps/handy state=directory owner=handy group=handy
 
 - name: Configure nginx site
   action: copy src=handy.pittcsc.org dest=/etc/nginx/sites-available/handy.pittcsc.org

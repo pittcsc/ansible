@@ -1,4 +1,0 @@
----
-- name: Create groups
-  action: group name={{ item.name }} state=present
-  with_items: user_groups
