@@ -16,7 +16,7 @@
   notify: Reload ufw
 
 - name: Deny inbound traffic from decommissioned internal hosts
-  action: ufw direction=in proto=any from_ip={{ item }} rule=allow
+  action: ufw direction=in proto=any from_ip={{ item }} rule=allow delete=yes
   with_items:
     - 10.132.250.45   # dns-01
   notify: Reload ufw
