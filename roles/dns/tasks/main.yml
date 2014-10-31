@@ -1,4 +1,18 @@
----
+- name: Install bind9
+  apt: pkg={{item}} state=installed
+  with_items:
+    - bind9
+    - bind9utils
+    - bind9-doc
+
+- name: Set bind9 options
+  action: copy src=bind9 dest=/etc/default/bind9
+  notify: Restart bind9
+
+- name: Set named options
+  action: template src=named.conf.options dest=/etc/bind/named.conf.options
+  notify: Restart bind9
+
 - name: Define named zones
   action: copy src=named.conf.local dest=/etc/bind/named.conf.local
   notify: Restart bind9
