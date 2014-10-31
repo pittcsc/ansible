@@ -3,7 +3,7 @@
   roles:
     - common
     - internal
+    - dns
     - ansible
     - syslog/server
     - nagios/server
-    - dns/primary

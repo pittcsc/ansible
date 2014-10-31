@@ -1,5 +1,4 @@
 ---
-- include: dns.yml
 - include: gateway.yml
 - include: ops.yml
 - include: app.yml
