@@ -6,3 +6,4 @@
     - ansible
     - syslog/server
     - nagios/server
+    - dns/primary

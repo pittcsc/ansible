@@ -2,16 +2,15 @@
 ; BIND data file for local loopback interface
 ;
 $TTL	604800
-@	IN	SOA	dns-01.do-nyc3.pittcsc.org. admin.do-nyc3.pittcsc.org. (
-			     15		; Serial
+@	IN	SOA	ops-01.do-nyc3.pittcsc.org. admin.do-nyc3.pittcsc.org. (
+			     16		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
 			 604800 )	; Negative Cache TTL
 
-																IN	NS dns-01.do-nyc3.pittcsc.org.
+																IN	NS ops-01.do-nyc3.pittcsc.org.
 
-dns-01.do-nyc3.pittcsc.org.     IN  A  10.132.250.45
 gateway-01.do-nyc3.pittcsc.org. IN  A  10.132.223.240
 ops-01.do-nyc3.pittcsc.org.     IN  A  10.132.236.208
 app-01.do-nyc3.pittcsc.org.     IN  A  10.132.243.53
