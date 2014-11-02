@@ -43,13 +43,9 @@
   action: apt pkg=nagios-nrpe-plugin state=installed
   notify: Restart Nagios
 
-- name: Configure nginx site
-  action: copy src=nagios.pittcsc.org dest=/etc/nginx/sites-available/nagios.pittcsc.org
-  notify: Restart nginx
-
-- name: Enable nginx site
-  action: file path=/etc/nginx/sites-enabled/nagios.pittcsc.org src=/etc/nginx/sites-available/nagios.pittcsc.org state=link
-  notify: Restart nginx
+- name: Configure Apache
+  action: copy src=apache2.conf dest=/etc/apache2/conf.d/nagios3.conf
+  notify: Restart Apache
 
 - name: Allow HTTP traffic
   action: ufw direction=in proto=tcp port=80 rule=allow
