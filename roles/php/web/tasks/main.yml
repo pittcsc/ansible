@@ -1,3 +1,4 @@
 ---
-- name: Install PHP FPM
-  action: apt pkg=php5-fpm state=installed
+- name: Install mod_php5
+  action: apt pkg=libapache2-mod-php5 state=installed
+  notify: Restart Apache
