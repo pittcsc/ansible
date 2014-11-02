@@ -44,7 +44,11 @@
   notify: Restart Nagios
 
 - name: Configure Apache
-  action: copy src=apache2.conf dest=/etc/apache2/conf.d/nagios3.conf
+  action: copy src=apache2.conf dest=/etc/apache2/conf-available/nagios3.conf
+  notify: Restart Apache
+
+- name: Enable Apache configuration
+  action: file path=/etc/apache2/conf-available/nagios3.conf src=/etc/apache2/conf-enabled/nagios3.conf state=link force=yes
   notify: Restart Apache
 
 - name: Allow HTTP traffic
