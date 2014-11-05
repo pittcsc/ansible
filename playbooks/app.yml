@@ -4,7 +4,7 @@
     - common
     - internal
     - app
-    - nagios/client
-    - syslog/client
     - knowhow
     - handy
+    - check_mk/client
+    - syslog/client

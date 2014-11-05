@@ -3,6 +3,6 @@
   roles:
     - common
     - internal
-    - nagios/client
     - web
     - hackpitt
+    - check_mk/client
