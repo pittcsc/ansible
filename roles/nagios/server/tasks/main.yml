@@ -34,8 +34,6 @@
     - services.cfg
     - timeperiods.cfg
     - commands.cfg
-    - hosts/app-01.cfg
-    - hosts/web-01.cfg
   notify: Restart Nagios
 
 - name: Install NRPE plugin
