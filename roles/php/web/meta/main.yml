@@ -1,4 +1,0 @@
----
-dependencies:
-  - apache2
-  - php/common

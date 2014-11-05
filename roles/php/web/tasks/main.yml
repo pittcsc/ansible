@@ -1,4 +1,0 @@
----
-- name: Install mod_php5
-  action: apt pkg=libapache2-mod-php5 state=installed
-  notify: Restart Apache

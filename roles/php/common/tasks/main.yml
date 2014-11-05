@@ -1,3 +1,0 @@
----
-- name: Install PHP 5
-  action: apt pkg=php5 state=installed
