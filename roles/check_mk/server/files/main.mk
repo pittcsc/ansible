@@ -1,1 +1,1 @@
-all_hosts = ["ops-01", "app-01", "web-01"]
+all_hosts = ["ops-01", "app-01", "web-01", "gateway-01"]
