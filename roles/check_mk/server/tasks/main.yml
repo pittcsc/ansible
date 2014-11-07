@@ -1,3 +1,6 @@
 ---
 - name: Configure check_mk
   action: copy src=main.mk dest=/etc/check_mk/main.mk
+
+- name: Configure sudoers
+  action: copy src=sudoers dest=/etc/sudoers.d/check_mk
