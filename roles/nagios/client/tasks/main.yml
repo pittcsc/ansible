@@ -1,18 +1,6 @@
 ---
-- name: Install NRPE server
-  action: apt pkg=nagios-nrpe-server state=installed
+- name: Uninstall NRPE server
+  action: apt pkg=nagios-nrpe-server state=absent
 
-- name: Configure NRPE server
-  action: copy src=nrpe.cfg dest=/etc/nagios/nrpe.cfg owner=nagios group=nagios
-  notify: Restart NRPE server
-
-- name: Create Nagios directories
-  action: file path={{ item }} state=directory owner=nagios group=nagios
-  with_items:
-    - /u/nagios
-    - /u/nagios/plugins
-
-- name: Add Nagios plugins
-  action: copy src=plugins/{{ item }} dest=/u/nagios/plugins/{{ item }} owner=nagios group=nagios mode=744
-  with_items:
-    - check_mem
+- name: Delete Nagios directories
+  action: file path=/u/nagios state=absent
