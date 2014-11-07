@@ -22,7 +22,10 @@
     - hosts
 
 - name: Configure Nagios
-  action: copy src=nagios.cfg dest=/etc/nagios3/nagios.cfg owner=nagios group=nagios
+  action: copy src={{ item }} dest=/etc/nagios3/{{ item }} owner=nagios group=nagios
+  with_items:
+    - nagios.cfg
+    - htpasswd.users
   notify: Restart Nagios
 
 - name: Install Nagios config for check_mk
