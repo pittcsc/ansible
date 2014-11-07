@@ -5,5 +5,4 @@
     - internal
     - web
     - hackpitt
-    - nagios/client
     - check_mk/client

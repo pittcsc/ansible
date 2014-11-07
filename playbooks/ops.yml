@@ -6,6 +6,5 @@
     - dns
     - ansible
     - syslog/server
-    - nagios/server
     - check_mk/server
     - check_mk/client

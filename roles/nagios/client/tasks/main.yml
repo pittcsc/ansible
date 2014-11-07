@@ -1,6 +1,0 @@
----
-- name: Uninstall NRPE server
-  action: apt pkg=nagios-nrpe-server state=absent
-
-- name: Delete Nagios directories
-  action: file path=/u/nagios state=absent

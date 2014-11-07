@@ -6,6 +6,5 @@
     - app
     - knowhow
     - handy
-    - nagios/client
     - check_mk/client
     - syslog/client
