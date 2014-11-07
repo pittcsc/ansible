@@ -29,8 +29,8 @@
   action: copy src=check_mk_objects.cfg dest=/etc/nagios3/conf.d/check_mk_objects.cfg owner=nagios group=nagios
   notify: Restart Nagios
 
-- name: Install NRPE plugin
-  action: apt pkg=nagios-nrpe-plugin state=installed
+- name: Uninstall NRPE plugin
+  action: apt pkg=nagios-nrpe-plugin state=absent
   notify: Restart Nagios
 
 - name: Allow HTTP traffic
