@@ -25,15 +25,8 @@
   action: copy src=nagios.cfg dest=/etc/nagios3/nagios.cfg owner=nagios group=nagios
   notify: Restart Nagios
 
-- name: Add custom Nagios config
-  action: copy src=conf/{{ item }} dest=/etc/nagios3/conf.d/{{ item }} owner=nagios group=nagios
-  with_items:
-    - contacts.cfg
-    - hostgroups.cfg
-    - hosts.cfg
-    - services.cfg
-    - timeperiods.cfg
-    - commands.cfg
+- name: Install Nagios config for check_mk
+  action: copy src=check_mk_objects.cfg dest=/etc/nagios3/conf.d/check_mk_objects.cfg owner=nagios group=nagios
   notify: Restart Nagios
 
 - name: Install NRPE plugin
