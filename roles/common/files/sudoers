@@ -22,6 +22,9 @@ root	ALL=(ALL:ALL) ALL
 # Allow members of group sudo to execute any command
 %sudo	ALL=(ALL:ALL) NOPASSWD: ALL
 
+# check_mk
+www-data ALL=(root) NOPASSWD: /usr/local/check_mk/bin/check_mk --automation *
+
 # See sudoers(5) for more information on "#include" directives:
 
 #includedir /etc/sudoers.d
