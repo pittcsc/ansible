@@ -1,0 +1,5 @@
+---
+check_mk:
+  notifications:
+    slack:
+      endpoint:

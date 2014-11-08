@@ -2,5 +2,8 @@
 - name: Configure check_mk
   action: copy src=main.mk dest=/etc/check_mk/main.mk
 
+- name: Install Slack notification script
+  action: copy src=notifications/slack dest=/usr/share/check_mk/notifications/slack mode=0755
+
 - name: Configure sudoers
   action: copy src=sudoers dest=/etc/sudoers.d/check_mk
