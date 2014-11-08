@@ -1,3 +1,4 @@
 ---
 dependencies:
   - ufw
+  - fail2ban
