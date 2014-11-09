@@ -26,5 +26,6 @@ case "$NOTIFY_WHAT" in
     send_with_optional_output "[$NOTIFY_NOTIFICATIONTYPE] [$NOTIFY_HOSTALIAS] $NOTIFY_SERVICEDESC is $NOTIFY_SERVICESTATE" "$NOTIFY_SERVICEOUTPUT"
     ;;
   *)
+    echo "Error: unrecognized subject for notification" >&2
     exit 1
 esac
