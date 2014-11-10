@@ -1,6 +1,6 @@
 ---
 - name: Create site directory
-  action: file path=/u/sites/hackpitt state=directory owner=hackpitt group=hackpitt
+  action: file path=/u/sites/hackpitt state=directory owner=hackpitt group=hackpitt mode=0755
 
 - name: Configure nginx site
   action: copy src=hackpitt.pittcsc.org dest=/etc/nginx/sites-available/hackpitt.pittcsc.org
