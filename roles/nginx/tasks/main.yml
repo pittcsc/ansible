@@ -6,6 +6,6 @@
   action: template src=nginx.conf dest=/etc/nginx/nginx.conf
   notify: Restart nginx
 
-- name: Delete default site
+- name: Disable default site
   action: file path=/etc/nginx/sites-enabled/default state=absent
   notify: Restart nginx
