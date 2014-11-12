@@ -11,5 +11,5 @@
 - name: Install Ansible
   action: apt pkg=ansible state=latest
 
-- name: Set Ansible options
+- name: Configure Ansible
   action: copy src=ansible.cfg dest=/etc/ansible/ansible.cfg
