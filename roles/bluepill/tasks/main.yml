@@ -1,6 +1,6 @@
 ---
 - name: Install Bluepill
-  action: gem name=bluepill version=0.0.69 state=present user_install=no
+  action: gem name=bluepill version=0.0.69 state=present executable=/opt/rbenv/shims/gem user_install=no
 
 - name: Create Bluepill directory
   action: file path=/u/bluepill state=directory owner=root group=root mode=0755
