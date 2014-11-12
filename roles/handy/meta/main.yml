@@ -4,4 +4,3 @@ dependencies:
   - nginx
   - ruby
   - mysql
-  - monit
