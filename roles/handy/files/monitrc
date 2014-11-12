@@ -1,11 +1,11 @@
-service handy_unicorn with pidfile /u/apps/handy/shared/pids/unicorn.pid
+check process handy_unicorn with pidfile /u/apps/handy/shared/pids/unicorn.pid
   group handy
   group unicorn
   start program = "/bin/bash -lc '/u/apps/handy/current/bin/bundle exec unicorn -c config/unicorn.rb -E production'"
   stop program = "/bin/bash -lc 'kill -QUIT $(cat /u/apps/handy/shared/pids/unicorn.pid)'"
   if 5 restarts within 5 cycles then timeout
 
-service handy_resque with pidfile /u/apps/handy/shared/pids/resque.pid
+check process handy_resque with pidfile /u/apps/handy/shared/pids/resque.pid
   group handy
   group resque
   start program = "/bin/bash -lc '/u/apps/handy/current/bin/bundle exec resque-pool -d -E production -p /u/apps/handy/shared/pids/resque.pid'"
