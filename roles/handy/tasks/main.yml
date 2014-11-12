@@ -13,3 +13,7 @@
 - name: Allow HTTP traffic
   action: ufw direction=in proto=tcp port=80 rule=allow
   notify: Reload ufw
+
+- name: Configure Bluepill
+  action: copy src=handy.pill dest=/u/bluepill/handy.pill
+  notify: Reload Bluepill config
