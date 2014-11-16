@@ -10,6 +10,8 @@ Eye.application('handy') do
     stop_command 'kill -QUIT {PID}'
     restart_command 'kill -USR2 {PID}'
 
+    start_grace 5.seconds
+    stop_grace 5.seconds
     restart_grace 10.seconds
 
     monitor_children do
@@ -23,6 +25,8 @@ Eye.application('handy') do
     start_command 'bundle exec resque-pool -p /u/apps/handy/shared/pids/resque.pid -E production -d'
     stop_command 'kill -QUIT {PID}'
 
+    start_grace 5.seconds
+    stop_grace 5.seconds
     restart_grace 10.seconds
 
     monitor_children do
