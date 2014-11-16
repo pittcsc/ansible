@@ -4,4 +4,4 @@ dependencies:
   - nginx
   - ruby
   - mysql
-  - bluepill
+  - eye

@@ -1,0 +1,6 @@
+---
+- name: Install Eye
+  action: gem name=eye version=0.6.3 state=present executable=/opt/rbenv/shims/gem user_install=no
+
+- name: Create Eye directory
+  action: file path=/u/eye state=directory owner=root group=root mode=0755

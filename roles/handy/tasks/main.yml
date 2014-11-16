@@ -14,6 +14,6 @@
   action: ufw direction=in proto=tcp port=80 rule=allow
   notify: Reload ufw
 
-- name: Configure Bluepill
-  action: copy src=handy.pill dest=/u/bluepill/handy.pill
-  notify: Reload Bluepill config
+- name: Configure Eye
+  action: copy src=handy.eye.rb dest=/u/eye/handy.eye
+  notify: Reload Eye config
