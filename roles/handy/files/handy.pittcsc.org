@@ -21,4 +21,10 @@ server {
   location / {
     try_files $uri @handy;
   }
+
+  location ^~ /assets/ {
+    gzip_static on;
+  }
+
+  keepalive_timout 10;
 }
