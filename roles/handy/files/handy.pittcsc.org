@@ -26,5 +26,5 @@ server {
     gzip_static on;
   }
 
-  keepalive_timout 10;
+  keepalive_timeout 10;
 }
