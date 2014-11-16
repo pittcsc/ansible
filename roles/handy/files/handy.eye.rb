@@ -1,7 +1,3 @@
-Eye.config do
-  logger '/var/log/eye.log'
-end
-
 Eye.application('handy') do
   uid 'handy'
   gid 'handy'
