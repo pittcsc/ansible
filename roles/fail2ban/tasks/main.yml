@@ -3,11 +3,11 @@
   action: apt pkg=fail2ban state=latest
 
 - name: Configure Fail2Ban
-  action: copy src=fail2ban/jail.local dest=/etc/fail2ban/jail.local
+  action: copy src=jail.local dest=/etc/fail2ban/jail.local
   notify: Restart Fail2Ban
 
 - name: Add custom Fail2Ban actions
-  action: template src=fail2ban/action.d/{{ item }} dest=/etc/fail2ban/action.d/{{ item }}
+  action: template src=action.d/{{ item }} dest=/etc/fail2ban/action.d/{{ item }}
   with_items:
     - slack.conf
   notify: Restart Fail2Ban
