@@ -1,9 +1,0 @@
-server {
-  listen 80;
-
-  server_name hackpitt.pittcsc.org;
-
-  location / {
-    root /u/sites/hackpitt/current/public;
-  }
-}
