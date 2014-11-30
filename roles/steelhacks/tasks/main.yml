@@ -9,7 +9,7 @@
     - hackpitt.pittcsc.org
   notify: Restart nginx
 
-- name: Enable nginx site
+- name: Enable nginx sites
   action: file path=/etc/nginx/sites-enabled/{{ item }} src=/etc/nginx/sites-available/{{ item }} state=link force=yes
   with_items:
     - steelhacks.pittcsc.org
