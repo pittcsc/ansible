@@ -1,0 +1,6 @@
+server {
+  listen 80;
+  server_name hackpitt.pittcsc.org;
+
+  return 301 http://steelhacks.pittcsc.org$request_uri;
+}
