@@ -1,0 +1,11 @@
+{
+  "client": {
+    "name": "{{ sensu_client_name }}",
+    "address": "{{ sensu_client_address }}",
+    "subscriptions": [
+      {% if sensu_client_subscriptions %}
+        "{{ sensu_client_subscriptions | join('", "') }}"
+      {% endif %}
+    ]
+  }
+}

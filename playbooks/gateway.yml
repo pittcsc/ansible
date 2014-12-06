@@ -2,5 +2,5 @@
 - hosts: gateway
   roles:
     - common
+    - sensu/client
     - gateway
-    - check_mk/client

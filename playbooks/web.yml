@@ -3,6 +3,6 @@
   roles:
     - common
     - internal
+    - sensu/client
     - web
     - steelhacks
-    - check_mk/client

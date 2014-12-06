@@ -1,0 +1,29 @@
+---
+- name: Create RabbitMQ vhost for Sensu
+  action: rabbitmq_vhost name={{ sensu_rabbitmq_vhost }} state=present
+
+- name: Create RabbitMQ user for Sensu
+  action: rabbitmq_user
+    user={{ sensu_rabbitmq_user }}
+    password={{ sensu_rabbitmq_password }}
+    vhost={{ sensu_rabbitmq_vhost }}
+    configure_priv=.*
+    read_priv=.*
+    write_priv=.*
+    state=present
+
+- name: Enable Sensu services
+  service: name={{ item }} enabled=yes
+  with_items:
+    - sensu-server
+    - sensu-api
+
+- name: Configure Redis for Sensu
+  action: template src=conf.d/redis.json dest=/etc/sensu/conf.d/redis.json owner=sensu group=sensu mode=0640
+  notify:
+    - Restart Sensu server
+    - Restart Sensu API
+
+- name: Configure Sensu API
+  action: template src=conf.d/api.json dest=/etc/sensu/conf.d/api.json owner=sensu group=sensu mode=0640
+  notify: Restart Sensu API

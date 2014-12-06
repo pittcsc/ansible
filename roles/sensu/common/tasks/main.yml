@@ -1,0 +1,21 @@
+---
+- name: Add key for Sensu repository to APT
+  action: apt_key url=http://repos.sensuapp.org/apt/pubkey.gpg state=present
+
+- name: Add Sensu repository to APT
+  action: apt_repository repo="deb http://repos.sensuapp.org/apt sensu main" update_cache=yes
+
+- name: Install Sensu
+  action: apt pkg=sensu state=present
+
+- name: Create Sensu SSL directory
+  action: file path=/etc/sensu/ssl owner=sensu group=sensu mode=0750 state=directory
+
+- name: Install SSL certificate and key
+  action: template src=ssl/{{ item }} dest=/etc/sensu/ssl/{{ item }} owner=sensu group=sensu mode=0640
+  with_items:
+    - cert.pem
+    - key.pem
+
+- name: Configure RabbitMQ for Sensu
+  action: template src=conf.d/rabbitmq.json dest=/etc/sensu/conf.d/rabbitmq.json owner=sensu group=sensu mode=0640

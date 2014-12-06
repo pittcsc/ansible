@@ -1,0 +1,21 @@
+---
+- name: Add key for RabbitMQ repository to APT
+  action: apt_key url=http://www.rabbitmq.com/rabbitmq-signing-key-public.asc state=present
+
+- name: Add RabbitMQ repository to APT
+  action: apt_repository repo="deb http://www.rabbitmq.com/debian/ testing main" update_cache=yes
+
+- name: Install RabbitMQ
+  action: apt pkg=rabbitmq-server state=installed
+
+- name: Install CA certificate, certificate, and key for RabbitMQ
+  action: template src=ssl/{{ item }} dest=/etc/rabbitmq/ssl/{{ item }} owner=rabbitmq group=rabbitmq mode=0640
+  with_items:
+    - cacert.pem
+    - cert.pem
+    - key.pem
+  notify: Restart RabbitMQ
+
+- name: Configure RabbitMQ
+  action: copy src=rabbitmq.config dest=/etc/rabbitmq/rabbitmq.config  owner=rabbitmq group=rabbitmq mode=0640
+  notify: Restart RabbitMQ

@@ -1,0 +1,8 @@
+---
+# RabbitMQ
+sensu_rabbitmq_host: localhost
+sensu_rabbitmq_port: 5671
+sensu_rabbitmq_user: sensu
+sensu_rabbitmq_password: secret
+sensu_rabbitmq_cert:
+sensu_rabbitmq_key:

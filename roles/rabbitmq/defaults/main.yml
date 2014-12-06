@@ -1,0 +1,4 @@
+---
+rabbitmq_cacert:
+rabbitmq_cert:
+rabbitmq_key:

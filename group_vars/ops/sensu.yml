@@ -1,0 +1,10 @@
+---
+# API
+sensu_api_host: ops-01
+sensu_api_port: 4567
+sensu_api_user: admin
+sensu_api_password: secret
+
+# Client
+sensu_client_subscriptions:
+  - all

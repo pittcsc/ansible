@@ -6,5 +6,6 @@
     - dns
     - ansible
     - syslog/server
-    - check_mk/server
-    - check_mk/client
+    - ruby
+    - sensu/server
+    - sensu/client

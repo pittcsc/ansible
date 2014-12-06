@@ -3,8 +3,8 @@
   roles:
     - common
     - internal
+    - sensu/client
+    - syslog/client
     - app
     - knowhow
     - handy
-    - check_mk/client
-    - syslog/client
