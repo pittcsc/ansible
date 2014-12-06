@@ -1,4 +1,3 @@
 ---
 - name: Set global Ruby version
   action: rbenv version={{ ruby_global }} state=global
-  when: ruby_global
