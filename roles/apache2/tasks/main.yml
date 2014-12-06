@@ -1,3 +1,0 @@
----
-- name: Install Apache 2
-  action: apt pkg=apache2 state=installed

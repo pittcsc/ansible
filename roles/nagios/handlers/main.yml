@@ -1,3 +1,0 @@
----
-- name: Restart Nagios
-  action: service name=nagios3 state=restarted

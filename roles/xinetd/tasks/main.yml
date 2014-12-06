@@ -1,3 +1,0 @@
----
-- name: Install xinetd
-  action: apt pkg=xinetd state=installed
