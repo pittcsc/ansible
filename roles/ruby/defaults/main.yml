@@ -1,4 +1,4 @@
 ---
-ruby:
-  versions: []
-  global:
+ruby_versions:
+  - 2.1.5
+ruby_global: 2.1.5

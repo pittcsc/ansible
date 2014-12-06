@@ -1,4 +1,4 @@
 ---
 - name: Install Ruby versions
   action: rbenv version={{ item }} state=installed
-  with_items: ruby.versions
+  with_items: ruby_versions

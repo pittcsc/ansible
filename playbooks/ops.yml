@@ -6,6 +6,5 @@
     - dns
     - ansible
     - syslog/server
-    - ruby
     - sensu/server
     - sensu/client
