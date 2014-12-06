@@ -7,4 +7,5 @@
     - ansible
     - syslog/server
     - sensu/server
+    - uchiwa
     - sensu/client
