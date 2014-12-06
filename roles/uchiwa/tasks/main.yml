@@ -1,0 +1,10 @@
+---
+- name: Install Uchiwa
+  action: apt pkg=uchiwa state=installed
+
+- name: Enable Uchiwa service
+  action: service name=uchiwa enabled=yes
+
+- name: Configure Uchiwa
+  action: template src=uchiwa.json dest=/etc/sensu/uchiwa.json owner=uchiwa group=uchiwa mode=0640
+  notify: Restart Uchiwa

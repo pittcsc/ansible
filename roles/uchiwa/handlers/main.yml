@@ -1,0 +1,3 @@
+---
+- name: Restart Uchiwa
+  action: service name=uchiwa state=restarted

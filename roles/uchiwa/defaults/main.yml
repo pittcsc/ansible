@@ -1,0 +1,6 @@
+uchiwa_datacenters: []
+uchiwa_host: 127.0.0.1
+uchiwa_port: 3000
+uchiwa_user: admin
+uchiwa_password: secret
+uchiwa_interval: 5
