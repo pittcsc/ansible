@@ -1,7 +1,0 @@
----
-dependencies:
-  - redis
-  - nginx
-  - ruby
-  - mysql
-  - eye

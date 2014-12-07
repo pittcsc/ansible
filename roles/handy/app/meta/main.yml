@@ -1,5 +1,5 @@
 ---
 dependencies:
-  - nodejs
-  - mongodb
   - nginx
+  - ruby
+  - eye

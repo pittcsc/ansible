@@ -1,10 +1,10 @@
 ---
-- hosts: app
+- hosts: db
   roles:
     - common
     - internal
     - sensu/client
     - syslog/client
-    - app
-    - knowhow/app
-    - handy/app
+    - mysql
+    - redis
+    - mongodb
