@@ -1,0 +1,16 @@
+{
+  "checks": {
+    {% for check in sensu_checks %}
+      "{{ check.name }}": {
+        "handlers": [
+          "{{ check.handlers | join('", "') }}"
+        ],
+        "command": "{{ check.command }}",
+        "interval": {{ check.interval }},
+        "subscribers": [
+          "{{ check.subscribers | join('", "') }}"
+        ]
+      }
+    {% endfor %}
+  }
+}

@@ -8,3 +8,6 @@ sensu_api_password: secret
 # Redis
 sensu_redis_host: localhost
 sensu_redis_port: 6379
+
+# Checks
+sensu_checks: []

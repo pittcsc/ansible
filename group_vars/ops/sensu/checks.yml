@@ -1,0 +1,9 @@
+---
+sensu_checks:
+  - name: crond
+    handlers:
+      - default
+    command: /etc/sensu/plugins/check_procs.rb -p crond -C 1
+    interval: 60
+    subscribers:
+      - all

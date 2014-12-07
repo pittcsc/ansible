@@ -5,3 +5,7 @@
 - name: Configure Sensu client
   action: template src=conf.d/client.json dest=/etc/sensu/conf.d/client.json owner=sensu group=sensu mode=0640
   notify: Restart Sensu client
+
+- name: Install Sensu plugins
+  action: copy src={{ item }} dest=/etc/sensu/plugins/ owner=sensu group=sensu mode=0755
+  with_fileglob: plugins/*
