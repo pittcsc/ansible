@@ -27,3 +27,7 @@
 - name: Configure Sensu API
   action: template src=conf.d/api.json dest=/etc/sensu/conf.d/api.json owner=sensu group=sensu mode=0640
   notify: Restart Sensu API
+
+- name: Configure Sensu checks
+  action: template src=conf.d/checks.json dest=/etc/sensu/conf.d/checks.json owner=sensu group=sensu mode=0640
+  notify: Restart Sensu server
