@@ -3,7 +3,7 @@ sensu_checks:
   - name: check_mem
     handlers:
       - default
-    command: /etc/sensu/plugins/check_mem -p -w 20 -c 10
+    command: /etc/sensu/plugins/check_mem -p -w 80 -c 90
     interval: 60
     subscribers:
       - all
