@@ -1,6 +1,6 @@
 ---
 sensu_checks:
-  - name: Free system memory
+  - name: check_mem
     handlers:
       - default
     command: /etc/sensu/plugins/check_mem -p -w 20 -C 10
