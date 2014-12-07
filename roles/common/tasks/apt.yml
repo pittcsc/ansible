@@ -3,4 +3,4 @@
   action: apt update_cache=true cache_valid_time=86400
 
 - name: Install APT
-  action: apt name=apt=1.0.1ubuntu2.5 state=present
+  action: apt name=apt state=latest
