@@ -1,9 +1,9 @@
 ---
 sensu_checks:
-  - name: crond
+  - name: Free system memory
     handlers:
       - default
-    command: /etc/sensu/plugins/check_procs.rb -p crond -C 1
+    command: /etc/sensu/plugins/check_mem -p -w 20 -C 10
     interval: 60
     subscribers:
       - all
