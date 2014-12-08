@@ -1,3 +1,6 @@
 ---
 - name: Install syslog-ng
-  action: apt pkg=syslog-ng state=installed
+  action: apt pkg={{ item }} state=installed
+  with_items:
+    - syslog-ng-core
+    - syslog-ng
