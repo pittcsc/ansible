@@ -1,5 +1,6 @@
 ---
 - include: gateway.yml
 - include: ops.yml
+- include: db.yml
 - include: app.yml
 - include: web.yml
