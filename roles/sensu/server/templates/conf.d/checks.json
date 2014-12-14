@@ -10,7 +10,7 @@
         "subscribers": [
           "{{ check.subscribers | join('", "') }}"
         ]
-      }
+      }{% if loop.last %},{% endif %}
     {% endfor %}
   }
 }
