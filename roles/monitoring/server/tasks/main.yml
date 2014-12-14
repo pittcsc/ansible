@@ -1,0 +1,4 @@
+---
+- name: Install Sensu handlers
+  action: copy src={{ item }} dest=/etc/sensu/handlers/ owner=sensu group=sensu mode=0755
+  with_fileglob: handlers/*

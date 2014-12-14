@@ -6,6 +6,6 @@
     - dns
     - ansible
     - syslog/server
-    - sensu/server
+    - monitoring/server
     - uchiwa
-    - sensu/client
+    - monitoring/client
