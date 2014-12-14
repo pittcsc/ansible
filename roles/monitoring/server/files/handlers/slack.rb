@@ -37,7 +37,7 @@ class Slack < Sensu::Handler
     HOST = "hooks.slack.com"
     PORT = 443
 
-    def initialize(token:, username:, icon:)
+    def initialize(token: nil, username: nil, icon: nil)
       @token, @username, @icon = token, username, icon
     end
 

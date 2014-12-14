@@ -19,3 +19,6 @@
 
 - name: Configure RabbitMQ for Sensu
   action: template src=conf.d/rabbitmq.json dest=/etc/sensu/conf.d/rabbitmq.json owner=sensu group=sensu mode=0640
+
+- name: Configure Sensu to use embedded Ruby
+  action: copy src=default dest=/etc/default/sensu owner=root group=root mode=0644
