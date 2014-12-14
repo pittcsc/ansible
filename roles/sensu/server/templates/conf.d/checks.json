@@ -2,10 +2,10 @@
   "checks": {
     {% for check in sensu_checks %}
       "{{ check.name }}": {
-        "handlers": {{ check.handlers|tojson }}
-        "command": {{ check.command|tojson }},
-        "interval": {{ check.interval|tojson }},
-        "subscribers": {{ check.subscribers|tojson }}
+        "handlers": {{ check.handlers|to_json }}
+        "command": {{ check.command|to_json }},
+        "interval": {{ check.interval|to_json }},
+        "subscribers": {{ check.subscribers|to_json }}
       }{% if not loop.last %},{% endif %}
     {% endfor %}
   }
