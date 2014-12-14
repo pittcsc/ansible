@@ -3,7 +3,7 @@
   roles:
     - common
     - internal
-    - sensu/client
+    - monitoring/client
     - syslog/client
     - app
     - knowhow/app

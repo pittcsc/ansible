@@ -2,5 +2,5 @@
 - hosts: gateway
   roles:
     - common
-    - sensu/client
+    - monitoring/client
     - gateway

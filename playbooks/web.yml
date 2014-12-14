@@ -3,6 +3,6 @@
   roles:
     - common
     - internal
-    - sensu/client
+    - monitoring/client
     - web
     - steelhacks
