@@ -41,7 +41,7 @@ sensu_checks:
   - name: check_handy_resque_pool_master_processes
     handlers:
       - slack
-    command: /etc/sensu/plugins/check_procs.rb -p "resque-pool-master[handy" -c 1 -C 1
+    command: /etc/sensu/plugins/check_procs.rb -p "resque-pool-master\[handy" -c 1 -C 1
     interval: 60
     subscribers:
       - handy_app
