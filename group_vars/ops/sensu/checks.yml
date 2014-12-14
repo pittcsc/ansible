@@ -31,13 +31,6 @@ sensu_checks:
     interval: 60
     subscribers:
       - handy_app
-  - name: check_handy_unicorn_queue
-    handlers:
-      - slack
-    command: /etc/sensu/plugins/check_unicorn_queue.rb -s /u/apps/handy/shared/sockets/unicorn.sock -w 5 -c 10
-    interval: 60
-    subscribers:
-      - handy_app
   - name: check_handy_resque_pool_master_processes
     handlers:
       - slack
