@@ -1,0 +1,3 @@
+---
+- name: Restart Sensu server
+  action: service name=sensu-server state=restarted

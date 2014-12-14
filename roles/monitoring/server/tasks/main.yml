@@ -5,6 +5,6 @@
   notify: Restart Sensu server
 
 - name: Configure Sensu
-  action: copy src={{ item }} dest=/etc/sensu/conf.d/ owner=sensu group=sensu mode=0755
+  action: copy src={{ item }} dest=/etc/sensu/conf.d/ owner=sensu group=sensu mode=0640
   with_fileglob: conf.d/*
   notify: Restart Sensu server
