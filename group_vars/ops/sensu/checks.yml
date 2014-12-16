@@ -8,6 +8,31 @@ sensu_checks:
     interval: 60
     subscribers:
       - all
+  - name: check_sshd_processes
+    handlers:
+      - slack
+    command: /etc/sensu/plugins/check_procs -p "^\/usr\/sbin\/sshd" -c 2 -C 1
+    interval: 60
+    subscribers:
+      - all
+
+  # MySQL
+  - name: check_mysql_processes
+    handlers:
+      - slack
+    command: /etc/sensu/plugins/check_procs.rb -p "^\/usr\/sbin\/mysqld" -u mysql -c 2 -C 1
+    interval: 60
+    subscribers:
+      - mysql
+
+  # MongoDB
+  - name: check_mongodb_processes
+    handlers:
+      - slack
+    command: /etc/sensu/plugins/check_procs.rb -p "^\/usr\/bin\/mongod" -u mongodb -c 2 -C 1
+    interval: 60
+    subscribers:
+      - mongodb
 
   # Handy
   - name: check_handy_http
