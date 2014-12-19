@@ -2,3 +2,6 @@
 - name: Install Sensu plugins
   action: copy src={{ item }} dest=/etc/sensu/plugins/ owner=sensu group=sensu mode=0755
   with_fileglob: plugins/*
+
+- name: Add Sensu user to adm group
+  action: user name=sensu groups=adm append=yes
