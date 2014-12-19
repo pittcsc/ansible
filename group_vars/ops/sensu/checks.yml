@@ -18,7 +18,7 @@ sensu_checks:
   - name: check_ufw_blocks
     handlers:
       - slack
-    command: /etc/sensu/plugins/check_log.rb -n check_ufw_blocks -f /var/log/ufw.log -q "\[UFW BLOCK\]" -w 10 -c 20
+    command: /etc/sensu/plugins/check_log.rb -n check_ufw_blocks -f /var/log/ufw.log -p "\[UFW BLOCK\]" -w 10 -c 20
     interval: 300 # 5 minutes
     subscribers:
       - all
