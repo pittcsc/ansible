@@ -19,7 +19,7 @@ require 'sensu-plugin/check/cli'
 require 'fileutils'
 
 class CheckLog < Sensu::Plugin::Check::CLI
-  BASE_DIR = '/var/cache/check_log'
+  BASE_DIR = '/u/sensu/cache/check_log'
 
   option :state_auto,
   description: 'Set state file dir automatically using name',
