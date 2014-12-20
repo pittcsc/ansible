@@ -2,3 +2,5 @@
 sensu_client_subscriptions:
   - all
   - ops
+  - dns
+  - syslog

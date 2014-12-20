@@ -23,6 +23,24 @@ sensu_checks:
     subscribers:
       - all
 
+  # DNS
+  - name: check_named_processes
+    handlers:
+      - slack
+    command: /etc/sensu/plugins/check_procs.rb -p "\/usr\/sbin\/named -4 -u bind -c 2 -C 1"
+    interval: 60
+    subscribers:
+      - dns
+
+  # Syslog
+  - name: check_syslog_processes
+    handlers:
+      - slack
+    command: /etc/sensu/plugins/check_procs.rb -p "\/usr\/sbin\/syslog-ng -p \/var\/run\/syslog-ng\.pid" -c 2 -C 1
+    interval: 60
+    subscribers:
+      - syslog
+
   # MySQL
   - name: check_mysql_processes
     handlers:
@@ -40,6 +58,15 @@ sensu_checks:
     interval: 60
     subscribers:
       - mongodb
+
+  # Nginx
+  - name: check_nginx_master_processes
+    handlers:
+      - slack
+    command: /etc/sensu/plugins/check_procs.rb -p "nginx: master process \/usr\/sbin\/nginx" -c 2 -C 1
+    interval: 60
+    subscribers:
+      - nginx
 
   # Handy
   - name: check_handy_http
