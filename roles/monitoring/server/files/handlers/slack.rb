@@ -4,12 +4,18 @@ require 'json'
 
 class Slack < Sensu::Handler
   class Notification
+    Attachment = Struct.new(:text)
+
     def initialize(event)
       @event = event
     end
 
     def text
       "[#{client_name}] #{check_name} is #{check_status}."
+    end
+
+    def attachments
+      [Attachment.new(event_description)]
     end
 
     private
@@ -30,6 +36,10 @@ class Slack < Sensu::Handler
         when 2 then "CRITICAL"
         else        "UNKNOWN"
         end
+      end
+
+      def event_description
+        event["notification"] || event["check"]["output"]
       end
   end
 
@@ -62,7 +72,14 @@ class Slack < Sensu::Handler
         JSON.generate \
           username: username,
           icon_emoji: icon,
-          text: message.text
+          text: message.text,
+          attachments: attachments_for(message)
+      end
+
+      def attachments_for(message)
+        message.attachments.map do |attachment|
+          { text: attachment.text }
+        end
       end
   end
 
