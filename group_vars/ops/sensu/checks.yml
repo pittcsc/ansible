@@ -63,7 +63,7 @@ sensu_checks:
   - name: check_nginx_master_processes
     handlers:
       - slack
-    command: /etc/sensu/plugins/check_procs.rb -p "nginx: master process \/usr\/sbin\/nginx" -c 2 -C 1
+    command: "/etc/sensu/plugins/check_procs.rb -p \"nginx: master process \/usr\/sbin\/nginx\" -c 2 -C 1"
     interval: 60
     subscribers:
       - nginx
