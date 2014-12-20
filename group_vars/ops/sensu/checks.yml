@@ -1,106 +1,106 @@
 ---
 sensu_checks:
-  -
-    command: "/etc/sensu/plugins/check_mem -p -w 80 -c 90"
+  # Common
+  - name: check_mem
     handlers:
       - slack
+    command: /etc/sensu/plugins/check_mem -p -w 80 -c 90
     interval: 60
-    name: check_mem
     subscribers:
       - all
-  -
-    command: "/etc/sensu/plugins/check_procs.rb -p \"^\\/usr\\/sbin\\/sshd\" -c 2 -C 1"
+  - name: check_sshd_processes
     handlers:
       - slack
+    command: /etc/sensu/plugins/check_procs.rb -p "^\/usr\/sbin\/sshd" -c 2 -C 1
     interval: 60
-    name: check_sshd_processes
     subscribers:
       - all
-  -
-    command: "/etc/sensu/plugins/check_log.rb -n check_ufw_blocks -f /var/log/ufw.log -p \"\\[UFW BLOCK\\]\" -w 10 -c 20"
+  - name: check_ufw_blocks
     handlers:
       - slack
-    interval: 300
-    name: check_ufw_blocks
+    command: /etc/sensu/plugins/check_log.rb -n check_ufw_blocks -f /var/log/ufw.log -p "\[UFW BLOCK\]" -w 10 -c 20
+    interval: 300 # 5 minutes
     subscribers:
       - all
-  -
-    command: "/etc/sensu/plugins/check_procs.rb -p \"\\/usr\\/sbin\\/named -4 -u bind -c 2 -C 1\""
+
+  # DNS
+  - name: check_named_processes
     handlers:
       - slack
+    command: /etc/sensu/plugins/check_procs.rb -p "\/usr\/sbin\/named -4 -u bind" -c 2 -C 1
     interval: 60
-    name: check_named_processes
     subscribers:
       - dns
-  -
-    command: "/etc/sensu/plugins/check_procs.rb -p \"\\/usr\\/sbin\\/syslog-ng -p \\/var\\/run\\/syslog-ng\\.pid\" -c 2 -C 1"
+
+  # Syslog
+  - name: check_syslog_processes
     handlers:
       - slack
+    command: /etc/sensu/plugins/check_procs.rb -p "\/usr\/sbin\/syslog-ng -p \/var\/run\/syslog-ng\.pid" -c 2 -C 1
     interval: 60
-    name: check_syslog_processes
     subscribers:
       - syslog
-  -
-    command: "/etc/sensu/plugins/check_procs.rb -p \"^\\/usr\\/sbin\\/mysqld\" -u mysql -c 2 -C 1"
+
+  # MySQL
+  - name: check_mysql_processes
     handlers:
       - slack
+    command: /etc/sensu/plugins/check_procs.rb -p "^\/usr\/sbin\/mysqld" -u mysql -c 2 -C 1
     interval: 60
-    name: check_mysql_processes
     subscribers:
       - mysql
-  -
-    command: "/etc/sensu/plugins/check_procs.rb -p \"^\\/usr\\/bin\\/mongod\" -u mongodb -c 2 -C 1"
+
+  # MongoDB
+  - name: check_mongodb_processes
     handlers:
       - slack
+    command: /etc/sensu/plugins/check_procs.rb -p "^\/usr\/bin\/mongod" -u mongodb -c 2 -C 1
     interval: 60
-    name: check_mongodb_processes
     subscribers:
       - mongodb
-  -
-    command: "/etc/sensu/plugins/check_procs.rb -p \"master process \\/usr\\/sbin\\/nginx\" -c 2 -C 1"
+
+  # Nginx
+  - name: check_nginx_master_processes
     handlers:
       - slack
+    command: "/etc/sensu/plugins/check_procs.rb -p \"master process \\/usr\\/sbin\\/nginx\" -c 2 -C 1"
     interval: 60
-    name: check_nginx_master_processes
     subscribers:
       - nginx
-  -
-    command: "/etc/sensu/plugins/check_http.rb -u http://handy.pittcsc.org/monitoring/up -k --response-code 200"
+
+  # Handy
+  - name: check_handy_http
     handlers:
       - slack
+    command: /etc/sensu/plugins/check_http.rb -u http://handy.pittcsc.org/monitoring/up -k --response-code 200
     interval: 60
-    name: check_handy_http
     subscribers:
       - ops
-  -
-    command: "/etc/sensu/plugins/check_procs.rb -p \"unicorn master -c config/unicorn.rb -E production\" -u handy -c 2 -C 1"
+  - name: check_handy_unicorn_master_processes
     handlers:
       - slack
+    command: /etc/sensu/plugins/check_procs.rb -p "unicorn master -c config/unicorn.rb -E production" -u handy -c 2 -C 1
     interval: 60
-    name: check_handy_unicorn_master_processes
     subscribers:
       - handy_app
-  -
-    command: "/etc/sensu/plugins/check_procs.rb -p \"handy-[a-f0-9]+\" -u handy -c 2 -C 1"
+  - name: check_handy_unicorn_worker_processes
     handlers:
       - slack
+    command: /etc/sensu/plugins/check_procs.rb -p "handy-[a-f0-9]+" -u handy -c 2 -C 1
     interval: 60
-    name: check_handy_unicorn_worker_processes
     subscribers:
       - handy_app
-  -
-    command: "/etc/sensu/plugins/check_procs.rb -p \"resque-pool-master\\[handy\" -c 1 -C 1"
+  - name: check_handy_resque_pool_master_processes
     handlers:
       - slack
+    command: /etc/sensu/plugins/check_procs.rb -p "resque-pool-master\[handy" -c 1 -C 1
     interval: 60
-    name: check_handy_resque_pool_master_processes
     subscribers:
       - handy_app
-  -
-    command: "/etc/sensu/plugins/check_procs.rb -p \"Waiting for \\*\" -u handy -c 1 -C 1"
+  - name: check_handy_resque_master_processes
     handlers:
       - slack
+    command: /etc/sensu/plugins/check_procs.rb -p "Waiting for \*" -u handy -c 1 -C 1
     interval: 60
-    name: check_handy_resque_master_processes
     subscribers:
       - handy_app
