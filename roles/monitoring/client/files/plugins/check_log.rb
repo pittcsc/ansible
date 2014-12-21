@@ -21,13 +21,6 @@ class CheckLog < Sensu::Plugin::Check::CLI
     short: '-p PAT',
     long: '--pattern PAT'
 
-  option :exclude,
-    description: 'Pattern to exclude from matching',
-    short: '-E PAT',
-    long: '--exclude PAT',
-    proc: proc { |s| Regexp.compile s },
-    default: /(?!)/
-
   option :warning,
     description: 'Warning threshold for number of matches since last check',
     short: '-w N',
@@ -44,6 +37,7 @@ class CheckLog < Sensu::Plugin::Check::CLI
     unknown 'No file path specified' unless config[:file_path]
     unknown 'No pattern specified' unless config[:pattern]
 
+    message "Found #{new_matches_count} matches for #{config[:pattern]}"
     if new_matches_count > config[:critical]
       critical
     elsif new_matches_count > config[:warning]
