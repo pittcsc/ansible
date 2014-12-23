@@ -19,6 +19,16 @@
   action: ufw direction=in proto=any from_ip={{ item }} rule=deny
   with_items:
     - 209.239.114.179
+    - 202.40.181.94
+    - 47.23.79.74
+    - 61.58.35.74
+    - 69.32.224.129
+    - 209.12.252.254
+    - 61.174.51.217
+    - 61.174.50.229
+    - 118.98.43.33
+    - 112.218.235.197
+    - 211.109.1.231
   notify: Reload ufw
 
 - name: Allow inbound SSH traffic
