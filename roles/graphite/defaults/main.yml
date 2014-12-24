@@ -1,0 +1,10 @@
+---
+graphite_secret_key:
+graphite_time_zone: America/Chicago
+
+graphite_db_engine: django.db.backends.sqlite3
+graphite_db_name: /var/lib/graphite/graphite.db
+graphite_db_user:
+graphite_db_password:
+graphite_db_host:
+graphite_db_port:
