@@ -32,9 +32,13 @@
   notify: Reload ufw
 
 - name: Allow inbound SSH traffic
-  action: ufw direction=in port=22 rule=allow
+  action: ufw direction=in port=56362 rule=allow
   notify: Reload ufw
 
 - name: Deny other inbound traffic
   action: ufw direction=incoming policy=deny
+  notify: Reload ufw
+
+- name: Configure UFW prepended rules
+  action: template src=ufw/before.rules dest=/etc/ufw/before.rules owner=root group=root mode=0640
   notify: Reload ufw
