@@ -4,6 +4,10 @@
   with_fileglob: sensu/handlers/*
   notify: Restart Sensu server
 
+- name: Configure Sensu handlers
+  action: copy src=sensu/conf.d/handlers.json dest=/etc/sensu/conf.d/handlers.json owner=sensu group=sensu mode=0640
+  notify: Restart Sensu server
+
 - name: Configure Slack handler for Sensu
   action: template src=sensu/conf.d/slack.json dest=/etc/sensu/conf.d/slack.json owner=sensu group=sensu mode=0640
   notify: Restart Sensu server
