@@ -54,17 +54,17 @@ sensu_checks:
 
   # Websites
   - name: check_website_http
-    command: /etc/sensu/plugins/check_http.rb -u http://pittcsc.org/ -k --response-code 200
+    command: /etc/sensu/plugins/check_http.rb -u http://pittcsc.org -k --response-code 200 -r
     interval: 300  # 5 minutes
     subscribers:
       - ops
   - name: check_steelhacks_website_http
-    command: /etc/sensu/plugins/check_http.rb -u http://steelhacks.pittcsc.org -k --response-code 200
+    command: /etc/sensu/plugins/check_http.rb -u http://steelhacks.pittcsc.org -k --response-code 200 -r
     interval: 300  # 5 minutes
     subscribers:
       - ops
   - name: check_intro_to_everything_website_http
-    command: /etc/sensu/plugins/check_http.rb -u http://introtoeverything.io -k --response-code 200
+    command: /etc/sensu/plugins/check_http.rb -u http://introtoeverything.io -k --response-code 200 -r
     interval: 300  # 5 minutes
     subscribers:
       - ops
