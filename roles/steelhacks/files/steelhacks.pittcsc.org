@@ -1,8 +1,0 @@
-server {
-  listen 80;
-  server_name steelhacks.pittcsc.org;
-
-  location / {
-    root /u/sites/steelhacks/current/public;
-  }
-}

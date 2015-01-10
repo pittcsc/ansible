@@ -1,3 +1,0 @@
----
-- name: Create sites directory
-  action: file path=/u/sites state=directory owner=root group=root mode=0755

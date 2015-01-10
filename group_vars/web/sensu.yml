@@ -1,4 +1,0 @@
----
-sensu_client_subscriptions:
-  - all
-  - nginx

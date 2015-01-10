@@ -1,8 +1,0 @@
----
-- hosts: web
-  roles:
-    - common
-    - internal
-    - monitoring/client
-    - web
-    - steelhacks

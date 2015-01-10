@@ -3,7 +3,7 @@
 ;
 $TTL	604800
 @	IN	SOA	ops-01.do-nyc3.pittcsc.org. admin.do-nyc3.pittcsc.org. (
-			     17		; Serial
+			     18		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
@@ -16,4 +16,3 @@ $TTL	604800
 208.236  IN  PTR  ops-01.do-nyc3.pittcsc.org.
 45.250   IN  PTR  db-01.do-nyc3.pittcsc.org.
 53.243   IN  PTR  app-01.do-nyc3.pittcsc.org.
-20.224   IN  PTR  web-01.do-nyc3.pittcsc.org.
