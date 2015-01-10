@@ -1,5 +1,5 @@
 [gateway]
-gateway-01
+gateway-01 ansible_ssh_port=56362
 
 [ops]
 ops-01
