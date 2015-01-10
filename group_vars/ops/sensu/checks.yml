@@ -54,7 +54,7 @@ sensu_checks:
 
   # Websites
   - name: check_website_http
-    command: /etc/sensu/plugins/check_http.rb -u http://pittcsc.org -k --response-code 200
+    command: /etc/sensu/plugins/check_http.rb -u http://pittcsc.org/ -k --response-code 200
     interval: 300  # 5 minutes
     subscribers:
       - ops
