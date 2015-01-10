@@ -73,14 +73,5 @@
 # is uncommented)
 -A ufw-before-input -p udp -d 239.255.255.250 --dport 1900 -j ACCEPT
 
-#
-# NAT rules
-#
-*nat
-:PREROUTING ACCEPT[0:0]
-
-# forward SSH traffic on the private network to the special sshd port
--A PREROUTING -i eth1 -p tcp -m tcp -d {{ ansible_eth1.ipv4.address }} -dport 22 -j DNAT --to-destination {{ ansible_eth1.ipv4.address }}:56362
-
 # don't delete the 'COMMIT' line or these rules won't be processed
 COMMIT
