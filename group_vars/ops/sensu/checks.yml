@@ -13,7 +13,7 @@ sensu_checks:
       - all
   - name: check_ufw_blocks
     command: /etc/sensu/plugins/check_log.rb -n check_ufw_blocks -f /var/log/ufw.log -p "\[UFW BLOCK\]" -w 10 -c 20
-    interval: 300 # 5 minutes
+    interval: 300  # 5 minutes
     subscribers:
       - all
 
@@ -51,6 +51,23 @@ sensu_checks:
     interval: 60
     subscribers:
       - nginx
+
+  # Websites
+  - name: check_website_http
+    command: /etc/sensu/plugins/check_http.rb -u http://pittcsc.org -k --response-code 200
+    interval: 300  # 5 minutes
+    subscribers:
+      - ops
+  - name: check_steelhacks_website_http
+    command: /etc/sensu/plugins/check_http.rb -u http://steelhacks.pittcsc.org -k --response-code 200
+    interval: 300  # 5 minutes
+    subscribers:
+      - ops
+  - name: check_intro_to_everything_website_http
+    command: /etc/sensu/plugins/check_http.rb -u http://introtoeverything.io -k --response-code 200
+    interval: 300  # 5 minutes
+    subscribers:
+      - ops
 
   # Handy
   - name: check_handy_http
