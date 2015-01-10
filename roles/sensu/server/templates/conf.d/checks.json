@@ -2,7 +2,7 @@
   "checks": {
     {% for check in sensu_checks %}
       "{{ check.name }}": {
-        "handlers": {{ check.handlers|to_json }},
+        "handlers": {{ check.handlers|default(['default'])|to_json }},
         "command": {{ check.command|to_json }},
         "interval": {{ check.interval|to_json }},
         "subscribers": {{ check.subscribers|to_json }}

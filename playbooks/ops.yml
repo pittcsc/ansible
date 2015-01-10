@@ -7,5 +7,4 @@
     - ansible
     - syslog/server
     - monitoring/server
-    - uchiwa
     - monitoring/client

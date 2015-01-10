@@ -1,4 +1,7 @@
 ---
 dependencies:
   - rabbitmq
+  - nginx
   - sensu/server
+  - uchiwa
+  - graphite

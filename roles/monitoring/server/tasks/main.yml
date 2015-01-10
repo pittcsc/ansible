@@ -1,9 +1,3 @@
 ---
-- name: Install Sensu handlers
-  action: copy src={{ item }} dest=/etc/sensu/handlers/ owner=sensu group=sensu mode=0755
-  with_fileglob: handlers/*
-  notify: Restart Sensu server
-
-- name: Configure Slack handler for Sensu
-  action: template src=conf.d/slack.json dest=/etc/sensu/conf.d/slack.json owner=sensu group=sensu mode=0640
-  notify: Restart Sensu server
+- include: sensu.yml
+- include: graphite.yml

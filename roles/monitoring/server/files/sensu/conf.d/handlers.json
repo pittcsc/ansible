@@ -1,5 +1,11 @@
 {
   "handlers": {
+    "default": {
+      "type": "set",
+      "handlers": [
+        "slack"
+      ]
+    },
     "slack": {
       "type": "pipe",
       "command": "/etc/sensu/handlers/slack.rb"
