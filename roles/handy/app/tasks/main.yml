@@ -17,3 +17,8 @@
 - name: Configure Eye
   action: copy src=handy.eye.rb dest=/u/eye/handy.eye
   notify: Reload Eye config
+
+- name: Install Dependencies
+  action: apt package={{item}} state=installed
+  with_items:
+    - wkhtmltopdf
