@@ -22,4 +22,3 @@
   action: apt package={{item}} state=installed
   with_items:
     - wkhtmltopdf
-  notify: Installing dependencies
