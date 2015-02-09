@@ -18,7 +18,12 @@
   action: copy src=handy.eye.rb dest=/u/eye/handy.eye
   notify: Reload Eye config
 
-- name: Install Dependencies
+- name: Install dependencies
   action: apt package={{item}} state=installed
   with_items:
+    - xorg
+    - xvfb
     - wkhtmltopdf
+
+- name: Install wkhtmltopdf shim
+  action: copy src=wkhtmltopdf dest=/u/apps/bin/shared/wkhtmltopdf owner=handy group=handy mode=0744
