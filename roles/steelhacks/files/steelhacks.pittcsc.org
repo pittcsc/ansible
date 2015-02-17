@@ -1,5 +1,5 @@
 server {
   listen 80;
   server_name steelhacks.pittcsc.org;
-  return 302 $scheme://steelhacks.com/$request_uri;
+  return 302 $scheme://steelhacks.com$request_uri;
 }
