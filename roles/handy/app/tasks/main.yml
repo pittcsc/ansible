@@ -26,4 +26,4 @@
     - wkhtmltopdf
 
 - name: Install wkhtmltopdf shim
-  action: copy src=wkhtmltopdf dest=/u/apps/bin/shared/wkhtmltopdf owner=handy group=handy mode=0744
+  action: copy src=wkhtmltopdf dest=/u/apps/handy/shared/bin/wkhtmltopdf owner=handy group=handy mode=0744
