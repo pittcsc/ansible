@@ -1,0 +1,9 @@
+upstream handy {
+  server unix:///u/apps/handy/shared/sockets/unicorn.sock fail_timeout=0;
+}
+
+server {
+  listen 80;
+  server_name steelhacks.pittcsc.org;
+  return 302 $scheme://steelhacks.com/$request_uri;
+}
