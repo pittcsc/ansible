@@ -3,4 +3,3 @@ sensu_client_subscriptions:
   - all
   - nginx
   - handy_app
-  - syslog

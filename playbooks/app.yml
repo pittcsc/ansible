@@ -4,7 +4,6 @@
     - common
     - internal
     - monitoring/client
-    - syslog/client
     - app
     - knowhow/app
     - handy/app

@@ -24,13 +24,6 @@ sensu_checks:
     subscribers:
       - dns
 
-  # Syslog
-  - name: check_syslog_processes
-    command: /etc/sensu/plugins/check_procs.rb -p "\/usr\/sbin\/syslog-ng -p \/var\/run\/syslog-ng\.pid" -c 2 -C 1
-    interval: 60
-    subscribers:
-      - syslog
-
   # MySQL
   - name: check_mysql_processes
     command: /etc/sensu/plugins/check_procs.rb -p "^\/usr\/sbin\/mysqld" -u mysql -c 2 -C 1

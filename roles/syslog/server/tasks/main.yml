@@ -1,7 +1,0 @@
----
-- name: Create logs directory
-  action: file path=/u/logs state=directory owner=root group=root mode=0755
-
-- name: Configure syslog-ng
-  action: template src=syslog-ng.conf dest=/etc/syslog-ng/syslog-ng.conf
-  notify: Restart syslog-ng
