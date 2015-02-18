@@ -1,6 +1,12 @@
 ---
+- name: Add key for Sensu repository to APT
+  action: apt_key url=http://repos.sensuapp.org/apt/pubkey.gpg state=present
+
+- name: Add Sensu repository to APT
+  action: apt_repository repo="deb http://repos.sensuapp.org/apt sensu main" update_cache=yes
+
 - name: Install Uchiwa
-  action: apt pkg=uchiwa state=installed
+  action: apt pkg=uchiwa=0.5.0 state=installed
 
 - name: Enable Uchiwa service
   action: service name=uchiwa enabled=yes
