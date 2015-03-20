@@ -2,6 +2,7 @@
 - include: network.yml
 - include: apt.yml
 - include: bash.yml
+- include: openssl.yml
 - include: build.yml
 - include: git.yml
 - include: users.yml

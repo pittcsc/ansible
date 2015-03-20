@@ -6,7 +6,6 @@
   action: apt pkg={{ item }} state=present
   with_items:
     - libffi-dev
-    - openssl
     - libssl-dev
     - libreadline-dev
     - ncurses-dev

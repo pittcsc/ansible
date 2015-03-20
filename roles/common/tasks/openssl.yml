@@ -1,0 +1,3 @@
+---
+- name: Install OpenSSL
+  action: apt name=openssl=1.0.1f-1ubuntu2.11 state=present
