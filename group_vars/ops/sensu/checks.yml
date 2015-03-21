@@ -71,3 +71,8 @@ sensu_checks:
     interval: 60
     subscribers:
       - handy_app
+  - name: check_handy_errors
+    command: /etc/sensu/plugins/check_log.rb -n check_handy_exceptions -f /u/apps/handy/shared/log/production.log -p "FATAL --" -w 2 -c 5
+    interval: 300  # 5 minutes
+    subscribers:
+      - handy_app
