@@ -54,21 +54,25 @@ sensu_checks:
   - name: check_handy_unicorn_master_processes
     command: /etc/sensu/plugins/check_procs.rb -p "unicorn master -c config/unicorn.rb -E production" -u handy -c 2 -C 1
     interval: 60
+    occurrences: 2
     subscribers:
       - handy_app
   - name: check_handy_unicorn_worker_processes
     command: /etc/sensu/plugins/check_procs.rb -p "handy-[a-f0-9]+" -u handy -c 2 -C 1
     interval: 60
+    occurrences: 2
     subscribers:
       - handy_app
   - name: check_handy_resque_pool_master_processes
     command: /etc/sensu/plugins/check_procs.rb -p "resque-pool-master\[handy" -c 1 -C 1
     interval: 60
+    occurrences: 2
     subscribers:
       - handy_app
   - name: check_handy_resque_master_processes
     command: /etc/sensu/plugins/check_procs.rb -p "Waiting for \*" -u handy -c 1 -C 1
     interval: 60
+    occurrences: 2
     subscribers:
       - handy_app
   - name: check_handy_errors
