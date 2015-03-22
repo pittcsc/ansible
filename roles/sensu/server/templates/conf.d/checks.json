@@ -5,6 +5,7 @@
         "handlers": {{ check.handlers|default(['default'])|to_json }},
         "command": {{ check.command|to_json }},
         "interval": {{ check.interval|to_json }},
+        "occurrences": {{ check.occurrences|default(1)|to_json }},
         "subscribers": {{ check.subscribers|to_json }}
       }{% if not loop.last %},{% endif %}
     {% endfor %}
