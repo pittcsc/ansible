@@ -9,6 +9,8 @@ server {
   root /u/apps/handy/current/public;
   try_files $uri @handy;
 
+  error_page 404 /404.html;
+
   location @handy {
     proxy_pass http://handy;
     proxy_redirect off;
@@ -24,6 +26,10 @@ server {
 
   location ^~ /assets/ {
     gzip_static on;
+  }
+
+  location ^~ /apple-touch-icon {
+    return 404;
   }
 
   keepalive_timeout 10;
