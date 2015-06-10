@@ -1,0 +1,19 @@
+---
+- name: Create app directory
+  action: file path=/u/apps/heaven state=directory owner=heaven group=heaven mode=0755
+
+- name: Configure nginx site
+  action: copy src=heaven.pittcsc.org dest=/etc/nginx/sites-available/heaven.pittcsc.org
+  notify: Restart nginx
+
+- name: Enable nginx site
+  action: file path=/etc/nginx/sites-enabled/heaven.pittcsc.org src=/etc/nginx/sites-available/heaven.pittcsc.org state=link force=yes
+  notify: Restart nginx
+
+- name: Allow HTTP traffic
+  action: ufw direction=in proto=tcp port=80 rule=allow
+  notify: Reload ufw
+
+- name: Configure Eye
+  action: copy src=heaven.eye.rb dest=/u/eye/heaven.eye
+  notify: Reload Eye config

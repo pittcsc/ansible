@@ -1,0 +1,3 @@
+---
+- name: Reload Eye config
+  action: command /bin/bash -lc "eye load /u/eye/heaven.eye"

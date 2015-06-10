@@ -1,0 +1,36 @@
+upstream heaven {
+  server unix:///u/apps/heaven/shared/sockets/unicorn.sock fail_timeout=0;
+}
+
+server {
+  listen 80;
+  server_name heaven.pittcsc.org;
+
+  root /u/apps/heaven/current/public;
+  try_files $uri @heaven;
+
+  error_page 404 /404.html;
+
+  location @heaven {
+    proxy_pass http://heaven;
+    proxy_redirect off;
+
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  }
+
+  location / {
+    try_files $uri @heaven;
+  }
+
+  location ^~ /assets/ {
+    gzip_static on;
+  }
+
+  location ^~ /apple-touch-icon {
+    return 404;
+  }
+
+  keepalive_timeout 10;
+}
