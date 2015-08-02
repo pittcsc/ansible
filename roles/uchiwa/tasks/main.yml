@@ -6,7 +6,7 @@
   action: apt_repository repo="deb http://repos.sensuapp.org/apt sensu main" update_cache=yes
 
 - name: Install Uchiwa
-  action: apt pkg=uchiwa=0.4.0-1 state=installed
+  action: apt pkg=uchiwa=0.10.1-1 state=installed
 
 - name: Enable Uchiwa service
   action: service name=uchiwa enabled=yes
