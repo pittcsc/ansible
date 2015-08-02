@@ -1,6 +1,9 @@
 ---
-- name: Create app directory
-  action: file path=/u/apps/pittapi state=directory owner=pittapi group=pittapi mode=0755
+- name: Create app directories
+  action: file path={{item}} state=directory owner=pittapi group=pittapi mode=0755
+  with_items:
+    - /u/apps/pittapi
+    - /u/apps/pittapi/current
 
 - name: Configure nginx site
   action: copy src=pittapi.pittcsc.org dest=/etc/nginx/sites-available/pittapi.pittcsc.org
@@ -22,3 +25,6 @@
 
 - name: Install gunicorn
   action: pip name=gunicorn virtualenv=/u/apps/pittapi state=present
+
+- name: Clone app repo
+  action: git repo=https://github.com/RitwikGupta/PittAPIWebWrapper.git version=master dest=/u/apps/pittapi/current update=no
