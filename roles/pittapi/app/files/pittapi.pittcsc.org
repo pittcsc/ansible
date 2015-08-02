@@ -6,9 +6,7 @@ server {
   listen 80;
   server_name pittapi.pittcsc.org;
 
-  root /u/apps/pittapi/current;
-
-  location @pittapi {
+  location / {
     proxy_pass http://pittapi;
     proxy_redirect off;
 
