@@ -14,6 +14,12 @@
   action: ufw direction=in proto=tcp port=80 rule=allow
   notify: Reload ufw
 
+- name: Set private SSH key
+  action: template src=id_rsa dest=/home/heaven/.ssh/id_rsa
+
+- name: Set public SSH key
+  action: template src=id_rsa.pub dest=/home/heaven/.ssh/id_rsa.pub
+
 - name: Configure Eye
   action: template src=heaven.eye.rb dest=/u/eye/heaven.eye
   notify: Reload Eye config
