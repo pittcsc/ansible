@@ -1,6 +1,6 @@
 ---
 - name: Install system Python and supporting utils
-  action: apt package={{name}} state=installed
+  action: apt package={{item}} state=installed
   with_items:
     - python
     - python-setuptools
