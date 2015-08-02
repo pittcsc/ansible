@@ -1,5 +1,5 @@
 upstream pittapi {
-  server unix:///u/apps/pittapi/shared/sockets/gunicorn.sock fail_timeout=0;
+  server unix:///u/apps/pittapi/sockets/gunicorn.sock fail_timeout=0;
 }
 
 server {

@@ -4,6 +4,8 @@
   with_items:
     - /u/apps/pittapi
     - /u/apps/pittapi/current
+    - /u/apps/pittapi/pids
+    - /u/apps/pittapi/sockets
 
 - name: Configure nginx site
   action: copy src=pittapi.pittcsc.org dest=/etc/nginx/sites-available/pittapi.pittcsc.org
