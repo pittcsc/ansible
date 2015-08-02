@@ -16,6 +16,11 @@ class CheckLog < Sensu::Plugin::Check::CLI
     short: '-f FILE',
     long: '--file FILE'
 
+  option :file_encoding,
+    description: 'Encoding of the log file',
+    short: '-e ENCODING',
+    long: '--encoding ENCODING'
+
   option :pattern,
     description: 'Pattern to search for in file',
     short: '-p PAT',
@@ -72,7 +77,7 @@ class CheckLog < Sensu::Plugin::Check::CLI
     end
 
     def open_log_file
-      File.open(absolute_file_path) do |file|
+      File.open(absolute_file_path, "r:#{file_encoding}") do |file|
         file.seek(bytes_to_skip) if bytes_to_skip > 0
         yield file
       end
@@ -102,5 +107,9 @@ class CheckLog < Sensu::Plugin::Check::CLI
 
     def absolute_file_path
       @absolute_file_path ||= File.expand_path(config[:file_path])
+    end
+
+    def file_encoding
+      config[:file_encoding] || 'US-ASCII'
     end
 end
