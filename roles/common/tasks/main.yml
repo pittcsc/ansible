@@ -7,3 +7,4 @@
 - include: git.yml
 - include: users.yml
 - include: sudoers.yml
+- include: htop.yml

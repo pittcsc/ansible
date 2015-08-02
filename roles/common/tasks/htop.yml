@@ -1,0 +1,3 @@
+---
+- name: Install htop
+  action: apt name=htop state=present
