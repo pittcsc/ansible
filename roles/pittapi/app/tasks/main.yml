@@ -11,6 +11,10 @@
   action: copy src=pittapi.pittcsc.org dest=/etc/nginx/sites-available/pittapi.pittcsc.org
   notify: Restart nginx
 
+- name: Enable nginx site
+  action: file path=/etc/nginx/sites-enabled/pittapi.pittcsc.org src=/etc/nginx/sites-available/pittapi.pittcsc.org state=link force=yes
+  notify: Restart nginx
+
 - name: Allow HTTP traffic
   action: ufw direction=in proto=tcp port=80 rule=allow
   notify: Reload ufw

@@ -9,7 +9,7 @@ server {
   root /u/apps/pittapi/current;
 
   location @pittapi {
-    proxy_pass http://pitt-api;
+    proxy_pass http://pittapi;
     proxy_redirect off;
 
     proxy_set_header Host $host;
