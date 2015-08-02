@@ -3,6 +3,13 @@ Eye.application('heaven') do
   gid 'heaven'
   working_dir '/u/apps/heaven/current'
 
+  env \
+    'GITHUB_TOKEN' => '{{ heaven_github_token }}',
+    'GITHUB_CLIENT_ID' => '{{ heaven_github_client_id }}',
+    'GITHUB_CLIENT_SECRET' => '{{ heaven_github_client_secret }}',
+    'RAILS_SECRET_KEY_BASE' => '{{ heaven_rails_secret_key_base }}',
+    'REDIS_PROVIDER' => '{{ heaven_redis_provider }}'
+
   process 'unicorn' do
     pid_file '/u/apps/heaven/shared/pids/unicorn.pid'
 

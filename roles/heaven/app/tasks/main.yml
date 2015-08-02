@@ -15,5 +15,5 @@
   notify: Reload ufw
 
 - name: Configure Eye
-  action: copy src=heaven.eye.rb dest=/u/eye/heaven.eye
+  action: template src=heaven.eye.rb dest=/u/eye/heaven.eye
   notify: Reload Eye config
