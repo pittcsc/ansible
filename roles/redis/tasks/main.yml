@@ -1,3 +1,6 @@
 ---
 - name: Install Redis
   action: apt pkg=redis-server state=installed
+
+- name: Configure Redis
+  action: template src=redis.conf dest=/etc/redis.conf
