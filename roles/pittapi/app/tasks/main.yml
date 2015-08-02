@@ -19,3 +19,6 @@
   with_items:
     - Flask
     - BeautifulSoup
+
+- name: Install gunicorn
+  action: pip name=gunicorn virtualenv=/u/apps/pittapi state=present
