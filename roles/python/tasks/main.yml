@@ -1,0 +1,12 @@
+---
+- name: Install system Python and supporting utils
+  action: apt package={{name}} state=installed
+  with_items:
+    - python
+    - python-setuptools
+
+- name: Install pip
+  action: easy_install name=pip state=present
+
+- name: Install virtualenv
+  action: pip name=virtualenv state=present
