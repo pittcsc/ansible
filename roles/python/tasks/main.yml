@@ -6,7 +6,7 @@
     - python-setuptools
 
 - name: Install pip
-  action: easy_install name=pip state=present
+  action: easy_install name=pip
 
 - name: Install virtualenv
   action: pip name=virtualenv state=present
