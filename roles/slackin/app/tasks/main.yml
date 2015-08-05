@@ -1,0 +1,19 @@
+---
+- name: Configure nginx site
+  action: copy src=slack.pittcsc.org dest=/etc/nginx/sites-available/slack.pittcsc.org
+  notify: Restart nginx
+
+- name: Enable nginx site
+  action: template path=/etc/nginx/sites-enabled/slack.pittcsc.org src=/etc/nginx/sites-available/slack.pittcsc.org state=link force=yes
+  notify: Restart nginx
+
+- name: Allow HTTP traffic
+  action: ufw direction=in proto=tcp port=80 rule=allow
+  notify: Reload ufw
+
+- name: Configure Eye
+  action: template src=slackin.eye.rb dest=/u/eye/slackin.eye
+  notify: Reload slackin Eye config
+
+- name: Install slackin Node package
+  action: npm name=slackin state=present global=yes

@@ -1,0 +1,3 @@
+---
+- name: Reload slackin Eye config
+  action: command /bin/bash -lc "eye load /u/eye/slackin.eye"
