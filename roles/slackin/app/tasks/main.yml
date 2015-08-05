@@ -1,10 +1,10 @@
 ---
 - name: Configure nginx site
-  action: copy src=slack.pittcsc.org dest=/etc/nginx/sites-available/slack.pittcsc.org
+  action: template src=slack.pittcsc.org dest=/etc/nginx/sites-available/slack.pittcsc.org
   notify: Restart nginx
 
 - name: Enable nginx site
-  action: template path=/etc/nginx/sites-enabled/slack.pittcsc.org src=/etc/nginx/sites-available/slack.pittcsc.org state=link force=yes
+  action: file path=/etc/nginx/sites-enabled/slack.pittcsc.org src=/etc/nginx/sites-available/slack.pittcsc.org state=link force=yes
   notify: Restart nginx
 
 - name: Allow HTTP traffic
