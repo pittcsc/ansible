@@ -4,6 +4,8 @@ Eye.application('slackin') do
   working_dir '/home/slackin'
 
   process 'slackin' do
+    pid_file '/home/slackin/slackin.pid'
+
     start_command 'slackin -p "{{ slackin_port }}" -s "{{ slackin_subdomain }}" "{{ slackin_api_token }}"'
 
     start_grace 5.seconds
