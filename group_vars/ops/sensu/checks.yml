@@ -81,3 +81,11 @@ sensu_checks:
     interval: 300  # 5 minutes
     subscribers:
       - handy_app
+
+  # Slackin
+  - name: check_slackin_http
+    command: /etc/sensu/plugins/check_http.rb -u http://slack.pittcsc.org -k --response-code 200
+    interval: 60
+    occurrences: 5
+    subscribers:
+      - ops
