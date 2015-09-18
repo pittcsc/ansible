@@ -11,6 +11,7 @@ server {
     proxy_redirect off;
 
     gzip on;
+    gzip_types application/json;
     add_header "Cache-Control" "max-age=5259490";
 
     proxy_set_header Host $host;
