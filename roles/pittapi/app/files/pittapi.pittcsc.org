@@ -9,7 +9,9 @@ server {
   location / {
     proxy_pass http://pittapi;
     proxy_redirect off;
+
     gzip on;
+    add_header "Cache-Control" "max-age=5259490";
 
     proxy_set_header Host $host;
     proxy_set_header X-Real-IP $remote_addr;
