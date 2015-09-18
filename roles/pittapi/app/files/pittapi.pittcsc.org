@@ -9,6 +9,7 @@ server {
   location / {
     proxy_pass http://pittapi;
     proxy_redirect off;
+    gzip on;
 
     proxy_set_header Host $host;
     proxy_set_header X-Real-IP $remote_addr;
